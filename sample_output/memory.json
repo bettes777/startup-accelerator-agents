@@ -1,0 +1,802 @@
+[
+ {
+  "id": "M001",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Map the clinical workflows and staffing models in representative rural primary-care clinics (triage entry points, typical patient flow, staffing ratios, hours, connectivity and device availability). What are the minimum integration touchpoints needed for a triage assistant to be usable?",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M002",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "What evidence is required to demonstrate clinical validity and safety for an AI triage assistant in primary care? Propose pragmatic study designs (pilot, prospective validation, outcomes) that are feasible in rural settings and identify measurable endpoints.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M003",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "What are the data sources available in rural clinics (paper, electronic health records, referrals), what are the legal/privacy constraints for using these data for model development and deployment, and what consent/administrative workflows will clinics require?",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M004",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "What interoperability standards and technical constraints (offline modes, low-bandwidth sync, device support) must the product support to integrate with typical clinic systems?",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M005",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Competitive and landscape scan: identify existing products or pilots addressing primary-care triage/decision support for low-resource settings, their validation status, go-to-market approach, and key differentiators we should emphasize.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M006",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Identify non-dilutive grant and procurement opportunities (foundations, government health innovation funds, global health donors, public procurement pilots) that target rural health, primary-care strengthening, or AI in health. For each, list eligibility, typical award types (pilot, implementation, scale) and submission timelines — and advise the founder to verify eligibility, amounts and deadlines with the program itself.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M007",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Map the investor landscape for pre-seed healthtech: list investors and syndicates active in clinical AI or rural health (or intermediaries that run health innovation accelerators), the deal structures and milestones they expect at pre-seed, and recommended investor-targeting priorities for a pilot-to-proof roadmap.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M008",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Recommend a blended early funding plan (e.g., prototype grants + pilot procurement + convertible note/SAFE or small seed round) that aligns with the clinical validation milestones and timelines. Highlight what milestones would unlock each funding source.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M009",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Clear problem statement grounded in rural primary-care workflows and the specific harms or inefficiencies the triage assistant addresses.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M010",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Solution description: how the AI triage assistant works (user flow), what decisions it supports, and examples of typical clinical scenarios it will handle.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M011",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Clinical evidence plan: validation study design, endpoints, sample size rationale (or pathway to obtain), pilot partners, and timelines to first clinical evidence.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M012",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Regulatory & safety strategy: classification risk, planned pathway, post-market monitoring and explainability/oversight for clinicians.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M013",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Data & privacy approach: data sources, consent model, de-identification, local data residency and security safeguards, and offline/low-bandwidth operation.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M014",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Integration & deployment plan: technical architecture, interoperability approach, minimal device/IT requirements, and on-site training/support model for rural clinics.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M015",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Business model & reimbursement/go-to-market: customer segments (clinics, health systems, governments), buyer economics, procurement pathways, pricing or reimbursement hypotheses, and pilot-to-scale route.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M016",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Traction & pilot plan: letters of intent, clinic partnerships, timelines and KPIs for pilots (safety, accuracy, throughput, cost saving or time saved).",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M017",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Team and hiring plan: core team credentials, clinical validation capabilities, engineering and operations hires needed through next 18 months.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M018",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Financial ask & use of funds: amount requested, milestones tied to funds (prototype, pilots, regulatory prep), and near-term runway plan.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M019",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Risks and mitigations: clinical, regulatory, data, adoption and technical risks with concrete mitigation steps.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M020",
+  "author": "Planner",
+  "kind": "plan",
+  "text": "Demo materials and appendix: product mockups or demo scripts, technical architecture diagram, and a concise appendix of study protocols or pilot agreements.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M021",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Offline-first, lightweight mobile apps are the practical norm: Because connectivity and power are intermittent, digital clinical tools succeed when they function fully offline and sync with the cloud when bandwidth is available. Solutions that assume always-on internet face implementation failure in many rural clinics. (confidence: high; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M022",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Mixed records environment (paper + EHRs) drives need for flexible ingestion: Many clinics use paper registers and only a subset use electronic medical records (OpenMRS, DHIS2-linked systems); effective tools must accept manual entry, CSV import, simple HTTP APIs and SMS/USSD inputs. (confidence: high; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M023",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Task-shifting and CHW integration are central to rural primary care: Triage and first-contact care are often performed by lower-cadre staff (nurses, CHWs); digital assistants that support non-physician decision-makers and provide clear escalation pathways have higher adoption potential. (confidence: high; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M024",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Regulatory and ethical scrutiny for AI is increasing but fragmented: Countries vary in AI and health data regulation; implementers need local approvals, ethics review and clear consent workflows even where national regulation is light. (confidence: medium; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M025",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Demand for explainability and audit trails in clinical AI: Clinicians require transparent reasoning (key features driving triage) and the ability to audit decisions to trust and to support medico-legal defense. (confidence: medium; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M026",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: Small rural clinics / health posts (nurse- or clinical-officer-led)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M027",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: District hospitals' outpatient departments serving rural populations",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M028",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: Community health worker programs that refer into primary care",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M029",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: NGOs and public health agencies implementing digital health at scale",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M030",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: Clinical implementers and digital health integrators (OpenMRS/DHIS2 implementers)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M031",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Electronic IMCI / e-POCT style clinical decision-support tools for pediatric care (electronic IMCI implementations)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M032",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Consumer-facing AI triage apps repurposed for clinics (examples exist globally; validation status varies)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M033",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: OpenMRS, mUzima and other open-source EMR modules that include clinical decision support",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M034",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Local digital health vendors that build custom triage or symptom-checker modules for ministries/NGOs",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M035",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Paper-based national triage/IMCI algorithms (non-AI) embedded into digital forms",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M036",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Incorrect triage leading to missed severe illness (patient safety, liability)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M037",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Poor data quality from manual entry undermining model performance",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M038",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Low clinician/CHW trust if recommendations are opaque or conflict with local practice",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M039",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Regulatory/legal variation across jurisdictions causing deployment delays",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M040",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Operational issues: power, device sharing, theft, maintenance and funding for ongoing support",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M041",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Bilateral donor innovation / health security funds (e.g., country-level USAID / FCDO innovation calls) (Grant / government program, Pilot → Implementation): Bilateral donors routinely fund digital-primary-care pilots and procurement-linked pilots in rural settings; they can underwrite deployment costs, monitoring & evaluation, and provide introductions to Ministries of Health for procurement pilots. [source: model knowledge - verify; Check specific solicitations, country offices, eligibility (often NGO or consortium-led), award size and timelines with the donor; many calls are annual or rolling but vary by country.]",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M042",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Global foundations and philanthropic health funders (e.g., Gates Foundation, Wellcome-type funders) (Foundation grant, Prototype → Pilot → Scale (depending on program)): Foundations fund digital clinical decision-support, pediatric and primary-care strengthening, and AI-for-health research; good fit for clinical validation, explainability work, and implementation research that would de-risk procurement. [source: model knowledge - verify; Foundation programs differ widely in focus and timelines; verify calls for proposals and whether they fund for-profit entities directly or require NGO/academic partners.]",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M043",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Grand Challenges / Health innovation prize mechanisms (e.g., Grand Challenges Canada–style awards) (Grant / award, Seed / Pilot): Prize mechanisms are targeted at early, high-impact innovations and commonly fund proof-of-concept and small pilots in low-resource settings — useful to build pilot evidence and visibility. [source: model knowledge - verify; Prize calls are episodic; check specific eligibility, award types (proof-of-concept, transition-to-scale) and reporting requirements.]",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M044",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Ministry of Health / national eHealth procurement pilots and public procurement innovation windows (Public procurement pilot / government procurement, Pilot → Implementation → Scale): Direct procurement pilots with MoH or district health offices are the fastest route to real customers (district hospitals, clinics) and to future recurring revenue; they also validate procurement & integration pathways. [source: model knowledge - verify; Procurement pilots require local approvals, procurement procedures, and sometimes local partner actors; timelines can be long — confirm tender cycles and pilot program windows with the MoH or digital health unit.]",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M045",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Multilateral / development bank health and digital windows (e.g., World Bank / regional development banks' digital health programs) (Concessional grants / implementation funding, Implementation → Scale): Multilaterals fund large-scale primary-care strengthening and digital health infrastructure; they can finance rollout at district or national scale but generally require strong validation and procurement-ready vendors. [source: model knowledge - verify; These windows typically fund later-stage implementation and are accessed via government procurement or large NGOs; confirm whether there are innovation/innovation-lab components accepting pre-seed vendors.]",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M046",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Health innovation intermediaries and accelerators (NGO-run accelerators, digital health hubs) (Accelerator / non-dilutive grant + network, Pre-seed → Pilot): Intermediaries provide small non-dilutive grants, technical support (integration, regulatory, M&E), and introductions to public-sector procurement partners — high leverage for pilot access and clinical validation support. [source: model knowledge - verify; Programs vary—some provide equity investments and some only grants; verify cohort dates, equity terms (if any), and whether they facilitate procurement partnerships.]",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M047",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Recommended stage: Pre-seed → Pilot → Clinical validation (12–24 months)",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M048",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Funding narrative: We are building an offline-first, explainable AI triage assistant for rural primary-care clinics and CHW programs that complements mixed-record workflows (paper + basic EHRs). Early funding will be framed around (1) patient safety and explainability (audit trails, clinician-facing reasoning), (2) low-bandwidth/offline operation and simple integration (CSV/API/SMS), and (3) pragmatic deployment to nurse- or CHW-led clinics with clear escalation pathways. For grants and procurement pilots emphasize public health impact (reduced delays, correct referrals, task-shifting enablement) and measurable clinical/process endpoints; for impact investors stress unit economics, implementation cost-per-clinic, and a clear path to public-sector procurement and scale.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M049",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Offline-first mobile apps are the practical norm: Intermittent power and network access makes lightweight, offline-first mobile apps with background sync the baseline requirement for clinical tools in rural clinics. Apps must operate fully offline (including clinical logic and local storage) and reconcile/sync when bandwidth is available. (confidence: high; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M050",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Mixed paper + electronic records requires flexible ingestion: Many clinics use a combination of paper registers and a patchwork of EHRs (OpenMRS variants, DHIS2 reporting). Successful tools accept manual entry, simple CSV import, and minimal API integrations instead of assuming a single EHR standard. (confidence: high; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M051",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Task-shifting and CHW integration drive product design: Triaging is often performed by lower-cadre staff; digital assistants must be usable by CHWs and nurses, provide clear escalation criteria, and fit into referral workflows (referral slips, SMS/phone alerts, district feedback loops). (confidence: high; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M052",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Growing regulatory and ethical scrutiny on clinical AI: Countries are increasingly asking for clinical validation, data governance, and explainability. Even where national AI rules are nascent, ethics committees and procurement bodies demand audit trails and informed consent processes. (confidence: medium; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M053",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Demand for explainability and audit trails to build trust: Clinicians require transparent reasoning, provenance and the ability to audit decisions (for clinical acceptance and medico-legal protection). This favors deterministic decision-support or hybrid models (rules + ML) with logging. (confidence: medium; source: model knowledge - verify)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M054",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: Small rural primary-care clinics / health posts (nurse- or clinical-officer-led)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M055",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: District hospital outpatient departments serving rural populations",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M056",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: Community health worker (CHW) programs that identify and refer patients",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M057",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: NGOs implementing primary-care or child-health programs",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M058",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Target customer: Ministry of Health digital health units and district health management teams",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M059",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Electronic IMCI / e-POCT-style pediatric triage tools (digital IMCI implementations) - model knowledge - verify",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M060",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Open-source EHR front-ends used for clinical decision support (OpenMRS, mUzima) - model knowledge - verify",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M061",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Standalone consumer/clinic triage apps repurposed for LMIC use (various) - model knowledge - verify",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M062",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Competitor: Local digital health implementers and NGOs that bundle training + workflow change alongside software - model knowledge - verify",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M063",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Incorrect triage leading to missed severe illness or unnecessary referrals (clinical safety / liability)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M064",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Poor data quality from manual entry undermining model performance and trust",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M065",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Low clinician/CHW adoption if recommendations are opaque, interrupt workflows, or conflict with local norms",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M066",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Regulatory uncertainty or changing procurement requirements in pilot countries",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M067",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Risk: Operational risk from device availability, charging, and software maintenance in remote clinics",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M068",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Answer to peer question: Planned pilot countries: Kenya and Uganda (recommended). Rationale: both have active digital health ecosystems, widespread use of DHIS2/OpenMRS variants at district level, English-language clinical workforce, large CHW programs and significant donor/NGO activity which facilitates piloting and partner identification. All facts: model knowledge - verify. Verify country-specific procurement, Ministry pilots and donor solicitations with local partners and program offices.",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M069",
+  "author": "Research Agent",
+  "kind": "insight",
+  "text": "Answer to peer question: Target pilot scale & timeline (suggested, indicative): 0-6 months: deploy in 5–10 representative clinics + 20–50 CHWs (usability, offline sync, safety checks); 6–12 months: extend to 20–50 clinics + 100–200 CHWs and integrate basic reporting to district health teams; 12–18 months: larger roll-out to a district (50–150 clinics/CHWs) with MoH pilots and formal evaluation. Choice of grant windows and investor types: short pilots (6–12 months, small N) suit seed grants and NGO implementation funds; district-level 12–18 month pilots are better for government procurement pilots, donor implementation grants, or catalytic VC if traction and safety evidence are demonstrated. These are recommendations — verify operational feasibility and funding windows locally. (model knowledge - verify)",
+  "iteration": 0,
+  "superseded": false
+ },
+ {
+  "id": "M070",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Foundations & Grand Challenge-style pilot grants (e.g., global health foundation proof-of-concept funds) (Non-dilutive grant (foundation / challenge prize), Pre-seed → early pilot (prototype → small implementation)): Foundations commonly fund proof-of-concept and short operational pilots that de-risk clinical AI in low-resource primary care. Typical awards are pilot/proof-of-concept grants (6–18 months funding) or implementation grants that cover staff, local partnerships, and evaluation costs. Eligibility usually requires a clear health impact hypothesis, local partnerships (clinic/district/NGO), and an evaluation plan. Submission timelines vary by foundation but expect periodic calls (2–4 month application windows) and 3–6 month review cycles. [source: model knowledge - verify; Foundations and challenge funds differ greatly by program; confirm each program's eligibility criteria, award sizes, budgets allowed for evaluation, and application deadlines on the funder's site before applying.]",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M071",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "District / ministry pilot procurement (local government pilot funding or digital health innovation units) (Public procurement / pilot (government-run pilot funding), Pre-seed → Pilot → Implementation (proof-to-procurement pipeline)): Local health ministries or district health offices often run pilot procurement streams or innovation units that fund short pilots to test digital tools in a set of clinics. Typical awards are pilot contracts (3–12 month pilots) with in-kind commitments (clinic access, staff time) and sometimes small implementation budgets. Eligibility typically requires an MoU with the district/clinic leadership, alignment with national primary-care priorities, and data governance safeguards. RFPs and pilot calls align with budget cycles and can have long lead times (3–9+ months). [source: model knowledge - verify; Procurement timelines and contracting requirements vary widely by country and district. Confirm procurement rules, pilot acceptance criteria and whether procurement includes purchase orders or just evaluation support.]",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M072",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "NGO and implementing-partner pilots (donor-funded program partnerships) (Non-dilutive partnership + sub-award (NGO implementations), Pre-seed → Pilot → Scale via implementer networks): Large NGOs and implementers running donor-funded primary-care or CHW programs can run pilots or include tech partners as sub-grantees. Typical award types are subcontracts/sub-awards attached to existing donor programs (6–24 month pilots) and can lead to multi-district roll-outs if results are strong. Eligibility normally requires an operational partner with a history of implementing donor-funded programs and demonstrated capacity to manage human-subjects research if clinical validation is planned. [source: model knowledge - verify; NGOs often require local staffing, M&E plans, and alignment with donor deliverables. Confirm partner interest, sub-award terms and whether the NGO's donor allows technology procurement or requires open-source solutions.]",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M073",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Health innovation accelerators & intermediaries (accelerator cohorts, challenge-backed support) (Accelerator / fellowship (hybrid: non-dilutive support + connections to procurement and investors), Pre-seed → Prototype → Pilot readiness): Accelerators focused on global health can provide small grants, mentorship, connections to pilot partners (ministries, NGOs), and investor introductions. Typical support: 3–6 month cohorts with seed grants, pilot introductions, and technical support. Eligibility is usually startup teams with a working prototype, clear pilot plan, and willingness to accept mentorship/cohort commitments. [source: model knowledge - verify; Programs vary in what they offer (cash vs services) and in equity terms. Confirm whether support is non-dilutive, cohort dates, and pilot partnership facilitation specifics.]",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M074",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Pre-seed angels, impact investors and early-stage healthtech VCs (convertible note/SAFE or small equity round) (Dilutive funding (angel syndicates / seed VC), Pre-seed → Seed (to convert successful pilots into product development and regulatory readiness)): Investors with an interest in clinical AI or rural/LMIC health provide small pre-seed checks to cover expanded pilots, regulatory and validation work, and hiring. Common deal structures at pre-seed are convertible notes, SAFEs or small priced rounds. Investors expect milestones such as: working offline-capable prototype, pilot MoU or procurement agreement, preliminary clinical validation metrics, local partnerships, and a go-to-market pilot plan. Timelines to funding close vary but expect 2–4 months from first meetings to close for well-prepared teams. [source: model knowledge - verify; Investor expectations and structure differ; confirm target investor thesis, typical check size, and expected milestones before outreach. Consider offering convertible instruments for speed and minimal dilution at pre-seed.]",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M075",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Recommended stage: Pre-seed → Pilot (prototype already underway or about to start)",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M076",
+  "author": "Funding Advisor",
+  "kind": "funding",
+  "text": "Funding narrative: Frame funding asks around measurable clinical impact, risk-reduction steps, and procurement-readiness. For grant and pilot requests: pitch a clear hypothesis (how the AI triage reduces missed urgent cases and reduces unnecessary referrals), an operational pilot plan (2–6 rural clinics or CHW program, offline-first app, integration with referral workflows), and an evaluation plan (pre-specified clinical endpoints, safety monitoring, and ethics approvals). For investors: emphasize de-risking milestones already achieved (working offline prototype, clinician usability testing, MoU with a district/NGO for a pilot), a staged plan to clinical validation and procurement, and an exit path (scale via government procurement or NGO programs). Always highlight explainability, audit logging and data governance built-in to meet growing regulatory scrutiny.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M077",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 1 - Cover / Hook: Short description of product and target user: an AI triage assistant for nurse- and CHW-led rural primary-care clinics.; Why now: increasing attention to clinical AI in low-resource settings + need for practical offline tools.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M078",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 2 - Problem — What rural clinics face: Triage is commonly done by lower-cadre staff (CHWs, nurses, clinical officers) and must safely escalate urgent cases.; Intermittent power/connectivity, mixed paper + EHR systems, and limited device availability reduce feasibility of conventional clinical AI tools.; Poor data quality from manual entry undermines model performance and clinician trust; regulatory/ethical scrutiny is rising.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M079",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 3 - Solution — How the AI triage assistant works (user flow): User flow: CHW/nurse opens offline-first app → collects presenting complaint + vitals on-device (guided forms) → app runs deterministic rules + ML hybrid triage logic → displays recommended urgency level, key rationale, and escalation steps (referral criteria, SMS/phone alert template).; Design choices: hybrid rules + ML for explainability, audit logs for provenance, and simple manual entry / CSV import / minimal API for interoperability.; Decisions supported: urgent vs non-urgent triage, escalation/referral triggers, recommended next action (treat on-site, refer, emergency referral).",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M080",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 4 - Typical clinical scenarios (examples): Acute febrile illness: identify red flags for immediate referral vs outpatient management.; Respiratory distress / suspected pneumonia: escalate based on respiratory rate, oxygen saturation (if available), and danger signs.; Maternal triage (antenatal danger signs): prompt timely referral and generate referral slips/SMS alerts to receiving facility.; Each scenario includes: inputs required, logic used, recommended actions, and audit trail of the decision.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M081",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 5 - Product architecture & interoperability: Offline-first client (mobile lightweight app) with secure local storage, background sync when bandwidth is available, and a minimal cloud backend for analytics and central updates.; Interoperability: accept manual entry, CSV import and minimal API integrations rather than depending on a single EHR standard to accommodate mixed paper + EHR workflows.; Logging: clinical decision provenance, versioned model/rule IDs and timestamps for auditability.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M082",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 6 - Deployment, minimal device/IT requirements & support model: Minimum on-site tech: basic Android devices (phones/tablets) or a shared clinic tablet, intermittent power fallback (battery packs or solar where available) and optional pulse oximeters/thermometers as needed per scenario.; Support model: short on-site training for nurses/CHWs, simple job aids, district-level supervisor onboarding, remote support with periodic on-site refresher visits.; Operations: background sync + lightweight logs to enable supervisor dashboards and district feedback loops.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M083",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 7 - Data, privacy, security & offline/low-bandwidth operation: Data sources: on-device collected clinical encounter data, optional CSV imports from registers, limited sync of de-identified data for central analytics.; Consent & governance: built-in informed consent workflow at point of care; audit trails and versioned decision logs for governance and medico-legal traceability.; Security & residency: local encrypted storage while offline, secure sync with transport encryption; design to allow choice of local residency vs central cloud to meet local policy.; Mitigations for poor data quality: structured guided forms, required minimal fields, local validation rules, and supervisor review workflows.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M084",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 8 - Map of representative rural clinic workflows & minimum integration touchpoints: Representative flow: patient arrival → triage entry (CHW/nurse) → brief assessment using assistant → on-site management or referral → referral feedback loop to district.; Staffing & touchpoints: single nurse or clinical officer with CHW support; minimum integrations: patient encounter capture (app/manual), referral slip generation (print/SMS), supervisor sync for oversight.; Operational constraints to design for: limited hours, variable staffing ratios, mixed paper registers, intermittent connectivity and device sharing.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M085",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 9 - Business model, procurement & go-to-market: Customer segments: small rural primary-care clinics/health posts, district health offices, and district hospital outpatient departments.; Buyer economics & procurement pathways: pilots and procurement often run via foundations, district health bodies, or intermediaries/accelerators; procurement-readiness requires clinical validation and procurement-aligned pilots.; Pricing / reimbursement hypotheses: subscription or per-facility licencing for districts, or grant/contract-funded pilots with transition to procurement; exact pricing and reimbursement model to be validated in pilots.; Pilot-to-scale route: start with 2–6 rural clinics or a CHW program to demonstrate safety, impact and procurement readiness.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M086",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 10 - Validation, pilots & regulatory preparedness: Pilot design: measurable hypothesis (e.g., reduce missed urgent cases; reduce unnecessary referrals) and operational pilot in 2–6 rural clinics or CHW program to de-risk clinical AI.; Validation needs: clinical validation, audit trails and consent processes to satisfy ethics committees and procurement bodies.; Funding pathways for pilots: pursue foundation/grant proof-of-concept funds, accelerator support, and early-stage investors for scaling after successful pilots.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M087",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 11 - Team, current status & asks (founder to complete): Founders should provide: team bios (clinical lead, product/tech lead, ops/pilot lead), current prototype status, and any existing partnerships with clinics or districts.; Hiring needs and key hires to prepare for pilot (e.g., field ops, clinical validation lead, data security officer).; Risks and mitigation briefly summarized: data quality, clinician trust, regulatory expectations, and connectivity constraints.",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M088",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 12 - Funding ask, use of funds & next steps: Ask: (founder to specify amount) — proposed use: build pilot-ready product (offline-first app + backend), deploy 2–6 clinic pilot, run clinical validation and procurement-readiness activities, and cover initial ops/support.; Funding route recommendations: apply for foundation/grant pilot funds for the proof-of-concept phase, leverage accelerators for procurement connections, and engage pre-seed angels/impact VCs for follow-on.; Next steps: finalize protocol and budget for pilot, secure pilot partners, and prepare ethics/regulatory materials and consent/audit workflows (verify local requirements).",
+  "iteration": 0,
+  "superseded": true
+ },
+ {
+  "id": "M089",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 1 - Cover / Hook: Product: offline-first mobile triage assistant (hybrid rules + ML) for nurse- and CHW-led rural primary-care clinics.; Primary value: reduce missed urgent cases, standardise escalation, and produce audit trails for procurement and ethics review.; Why now: increasing attention to clinical AI validation, governance and practical offline tools in low-resource settings.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M090",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 2 - Problem — what rural clinics face: Triage is often performed by lower-cadre staff (CHWs, nurses) who must identify and escalate urgent cases safely.; Intermittent power/connectivity and mixed paper + EHR workflows make conventional cloud-first AI impractical.; Poor manual-data quality and rising regulatory/ethics scrutiny undermine clinician trust and procurement decisions.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M091",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 3 - Solution — how the assistant works: User flow: CHW/nurse opens offline app → guided form (complaint + vitals) → hybrid rules + on-device model → explainable recommendation (manage, urgent refer, emergency) → printed/SMS referral and audit log.; Design choices: deterministic rules + ML for explainability, versioned decision logs, local encrypted storage, background sync.; Interoperability: manual entry, CSV import, minimal API to fit mixed-paper/EHR environments.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M092",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 4 - Clinical scenarios & inputs: Representative scenarios: acute febrile illness (red flags), suspected pneumonia (RR, SpO2, danger signs), maternal triage (antenatal danger signs).; For each scenario the app lists required inputs, decision logic, action and an auditable explanation.; Minimal sensor needs: optional pulse oximeter; core operation requires only basic Android device and manual inputs.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M093",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 5 - Product architecture & security: Offline-first mobile client with local encrypted store, background sync and a lightweight cloud backend for aggregate analytics and model updates.; Auditability: versioned rules/models, time-stamped logs and consent capture at point-of-care to satisfy ethics/procurement reviewers.; Security: local encryption, transport encryption on sync, configurable data residency (local-only or centralised) depending on district policy.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M094",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 6 - Deployment & operational model (devices, training, support): Minimum on-site tech: basic Android phones/tablet per clinic, battery backup (powerbanks/solar), optional pulse oximeter device per site.; Support model: 1–2 day on-site training for clinicians/CHWs + job aids, district supervisor onboarding, remote support and scheduled on-site refreshers.; Operations: local device management, periodic model/rule updates via background sync, supervisor dashboards for QA and feedback loops.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M095",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 7 - Compact pilot protocol summary: Design: 2–6 rural clinics (or one CHW program covering similar catchment) over 6 months to demonstrate safety, feasibility and procurement-readiness.; Primary endpoint: reduction in missed urgent cases (operational definition to be finalised with clinical lead and ethics board). Secondary endpoints: change in referral rate, time-to-referral, data completeness, clinician adherence to recommendations, patient follow-up outcomes.; Data collection: app encounter logs, paper register cross-checks, supervisor audit forms, and post-encounter follow-up phone calls. Field research officers collect and upload de-identified data. Outcomes adjudication: blinded clinical review panel reviewing de-identified encounter records and referral outcomes.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M096",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 8 - 6–12 month timeline with milestones & go/no-go gates: Month 0–1: finalise protocol, secure MOUs/LOIs with pilot sites, submit ethics/regulatory application.; Month 2–3: device procurement & configuration, on-site training, baseline data collection.; Month 4–9: pilot operations and iterative improvements; ongoing M&E and data collection.; Decision gates: after 3 months operational data review — go/no-go if (a) data completeness >= target threshold, (b) no safety signal in blinded review, (c) minimum clinician uptake/adherence met. Final scale decision at pilot end based on pre-specified primary endpoint and procurement-readiness metrics.; Time horizon: pilot 6 months typical; extended 9–12 months if ethics approvals or procurement trials require longer follow-up.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M097",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 9 - Funding asks — 3 realistic scenarios & itemised use-of-funds (model figures — verify): Scenario A – Small proof-of-concept grant (6 months): focused on 2 clinics to show basic safety and feasibility. (Suggested ask: model knowledge - verify: USD 40k–80k).; Scenario B – Standard pilot grant (9 months): 4 clinics, full M&E, ethics submission and modest device procurement. (Suggested ask: model knowledge - verify: USD 120k–250k).; Scenario C – Larger district pilot / scale-readiness (12 months): 6 clinics, stronger implementation support, procurement readiness work and district engagement. (Suggested ask: model knowledge - verify: USD 300k–600k).; Itemised use-of-funds (major lines; unit costs are illustrative — model knowledge - verify): device procurement (Android tablet/phone @ USD 100–300 each; pulse oximeter @ USD 20–70 each); product dev & QA (feature dev, on-device model tuning) — person-months; field ops (local field officer salary or per-diem, travel & allowances); on-site training & refresher sessions (trainer days, materials); M&E/data collection & analysis (field data officers, statistician, monitoring tools); ethics/regulatory fees and translation; IT/data-security/compliance work (encryption, secure hosting, SOC-like checklist); overhead (institutional/admin) and 10–15% contingency.; All dollar figures and unit costs are model knowledge - verify; founder must confirm local device/pricing, salary scales, ethics fees and procurement timelines before applying.",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M098",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 10 - Which funder type for which instrument: Foundation / public-health grant: proof-of-concept grant to cover pilot ops, M&E and ethics (short-term non-dilutive). Target ask: Scenario A or B depending on scope.; Accelerator / implementation partners: non-dilutive support + mentorship and procurement introductions; useful for procurement-readiness and district introductions (Scenario B).; District / Ministry procurement contract or innovation fund: scoped pilot procurement contract to embed the tool in routine workflows (Scenario C; aim to demonstrate procurement-readiness metrics required by buyer).; Seed investors / angels (dilutive): pursue only after pilot demonstrates measurable impact and procurement interest — use for product scaling, commercialisation and hiring (next-stage ask estimated separately).; Founder action: map each funder approach to a concrete ask and required deliverables (e.g., foundation grant to cover pilot ops & M&E for X months; accelerator cohort to cover implementation support & introductions).",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M099",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 11 - Procurement-readiness metrics, buyer economics & partner commitments: Procurement-readiness metrics to demonstrate in pilot: per-facility and per-patient cost estimates (model knowledge - verify), clinician time-savings (minutes per encounter saved), escalation/referral accuracy targets, data completeness threshold (e.g., % of required fields captured), and safety (no increase in missed urgent cases).; Buyer economics to articulate: expected per-patient cost vs current pathway, operational savings from faster referral, supervisor time-savings from digital audit trails and reduction in unnecessary referrals.; Partner commitments: plan to secure MOUs/LOIs from pilot clinics and a district health office before applications; show signed LOIs in appendix. (Founder to obtain and insert MOUs/LOIs).",
+  "iteration": 1,
+  "superseded": false
+ },
+ {
+  "id": "M100",
+  "author": "Pitch Coach",
+  "kind": "outline",
+  "text": "Slide 12 - Team, next-stage funding triggers & verification note: Team asks: clinical lead, product/tech lead, field ops/pilot lead, data security officer — list current bios and key hires required for pilot.; Next-stage funding: after a successful pilot (meeting primary endpoint and procurement interest), consider seed/angel raise to scale product dev, expand to more districts and recruit commercial/business development staff. Estimated next-stage ask and runway should be prepared after pilot; figures here would be model knowledge - verify.; Important: always verify funder eligibility, award sizes and deadlines with funders themselves before applying — funding programs change often.",
+  "iteration": 1,
+  "superseded": false
+ }
+]

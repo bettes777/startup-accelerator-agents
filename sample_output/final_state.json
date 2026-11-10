@@ -1,0 +1,536 @@
+{
+ "domain": "healthtech",
+ "founder_context": "Pre-seed team building an AI triage assistant for rural primary-care clinics.",
+ "plan": {
+  "domain_framing": "We are building an AI triage assistant for rural primary-care clinics: a clinical decision-support and patient-routing tool that must operate reliably with intermittent connectivity, limited local diagnostics, scarce clinical staff, and constrained budgets. Key unknowns to resolve early include clinical validity and safety, data privacy and consent in low-resource settings, integration with existing workflows and record systems, reimbursement or procurement routes for primary-care clinics, and the regulatory path for an AI triage product (model knowledge - verify).",
+  "research_questions": [
+   "Map the clinical workflows and staffing models in representative rural primary-care clinics (triage entry points, typical patient flow, staffing ratios, hours, connectivity and device availability). What are the minimum integration touchpoints needed for a triage assistant to be usable?",
+   "What evidence is required to demonstrate clinical validity and safety for an AI triage assistant in primary care? Propose pragmatic study designs (pilot, prospective validation, outcomes) that are feasible in rural settings and identify measurable endpoints.",
+   "What are the data sources available in rural clinics (paper, electronic health records, referrals), what are the legal/privacy constraints for using these data for model development and deployment, and what consent/administrative workflows will clinics require?",
+   "What interoperability standards and technical constraints (offline modes, low-bandwidth sync, device support) must the product support to integrate with typical clinic systems?",
+   "Competitive and landscape scan: identify existing products or pilots addressing primary-care triage/decision support for low-resource settings, their validation status, go-to-market approach, and key differentiators we should emphasize."
+  ],
+  "funding_questions": [
+   "Identify non-dilutive grant and procurement opportunities (foundations, government health innovation funds, global health donors, public procurement pilots) that target rural health, primary-care strengthening, or AI in health. For each, list eligibility, typical award types (pilot, implementation, scale) and submission timelines — and advise the founder to verify eligibility, amounts and deadlines with the program itself.",
+   "Map the investor landscape for pre-seed healthtech: list investors and syndicates active in clinical AI or rural health (or intermediaries that run health innovation accelerators), the deal structures and milestones they expect at pre-seed, and recommended investor-targeting priorities for a pilot-to-proof roadmap.",
+   "Recommend a blended early funding plan (e.g., prototype grants + pilot procurement + convertible note/SAFE or small seed round) that aligns with the clinical validation milestones and timelines. Highlight what milestones would unlock each funding source."
+  ],
+  "pitch_requirements": [
+   "Clear problem statement grounded in rural primary-care workflows and the specific harms or inefficiencies the triage assistant addresses.",
+   "Solution description: how the AI triage assistant works (user flow), what decisions it supports, and examples of typical clinical scenarios it will handle.",
+   "Clinical evidence plan: validation study design, endpoints, sample size rationale (or pathway to obtain), pilot partners, and timelines to first clinical evidence.",
+   "Regulatory & safety strategy: classification risk, planned pathway, post-market monitoring and explainability/oversight for clinicians.",
+   "Data & privacy approach: data sources, consent model, de-identification, local data residency and security safeguards, and offline/low-bandwidth operation.",
+   "Integration & deployment plan: technical architecture, interoperability approach, minimal device/IT requirements, and on-site training/support model for rural clinics.",
+   "Business model & reimbursement/go-to-market: customer segments (clinics, health systems, governments), buyer economics, procurement pathways, pricing or reimbursement hypotheses, and pilot-to-scale route.",
+   "Traction & pilot plan: letters of intent, clinic partnerships, timelines and KPIs for pilots (safety, accuracy, throughput, cost saving or time saved).",
+   "Team and hiring plan: core team credentials, clinical validation capabilities, engineering and operations hires needed through next 18 months.",
+   "Financial ask & use of funds: amount requested, milestones tied to funds (prototype, pilots, regulatory prep), and near-term runway plan.",
+   "Risks and mitigations: clinical, regulatory, data, adoption and technical risks with concrete mitigation steps.",
+   "Demo materials and appendix: product mockups or demo scripts, technical architecture diagram, and a concise appendix of study protocols or pilot agreements."
+  ],
+  "success_criteria": [
+   "Clinical relevance: reviewers can see a plausible pathway to safe, measurable clinical impact in rural primary-care contexts.",
+   "Validation credibility: the evidence plan shows feasible, appropriately powered steps toward clinical validation and regulatory readiness.",
+   "Go-to-market clarity: clear customers, procurement routes, and realistic early adoption strategy for rural clinics.",
+   "Fundraising fit: funding ask and milestones aligned with identified non-dilutive and investor pathways, with clear use of funds.",
+   "Technical feasibility: plan accounts for low-connectivity, minimal infrastructure, and interoperability requirements.",
+   "Team credibility: core team skills matched to technical, clinical and operational challenges, with clear hiring priorities.",
+   "Risk awareness: major clinical, legal and adoption risks are identified with concrete mitigations."
+  ],
+  "reasoning": "This plan prioritizes clinical validation, regulatory readiness, and practical integration into low-resource workflows because these are the gating factors for adoption in rural primary care. The Research Agent must deliver grounded workflow, data and validation inputs the Pitch Coach will translate into a credible clinical-evidence and go-to-market story. The Funding Advisor must align funding sources and timelines to the validation milestones so the pitch asks match investor and grant expectations. Founders should verify all eligibility, amounts and deadlines with funding programs directly (model knowledge - verify)."
+ },
+ "research": {
+  "domain_summary": "AI-assisted triage for rural primary care is most viable when built for offline-first mobile use, supporting mixed paper/electronic records, and designed to assist non-physician cadres (nurses, clinical officers, CHWs) with clear escalation paths. Regulatory and ethical requirements vary by country and are increasing; implementers must plan consent, audit trails and clinician explainability. Validation should focus on safety (missed-severe-illness), usability for low-skill users, and integration into existing referral/record workflows. (model knowledge - verify)",
+  "target_customers": [
+   "Small rural primary-care clinics / health posts (nurse- or clinical-officer-led)",
+   "District hospital outpatient departments serving rural populations",
+   "Community health worker (CHW) programs that identify and refer patients",
+   "NGOs implementing primary-care or child-health programs",
+   "Ministry of Health digital health units and district health management teams"
+  ],
+  "market_trends": [
+   {
+    "title": "Offline-first mobile apps are the practical norm",
+    "detail": "Intermittent power and network access makes lightweight, offline-first mobile apps with background sync the baseline requirement for clinical tools in rural clinics. Apps must operate fully offline (including clinical logic and local storage) and reconcile/sync when bandwidth is available.",
+    "confidence": "high",
+    "source": "model knowledge - verify"
+   },
+   {
+    "title": "Mixed paper + electronic records requires flexible ingestion",
+    "detail": "Many clinics use a combination of paper registers and a patchwork of EHRs (OpenMRS variants, DHIS2 reporting). Successful tools accept manual entry, simple CSV import, and minimal API integrations instead of assuming a single EHR standard.",
+    "confidence": "high",
+    "source": "model knowledge - verify"
+   },
+   {
+    "title": "Task-shifting and CHW integration drive product design",
+    "detail": "Triaging is often performed by lower-cadre staff; digital assistants must be usable by CHWs and nurses, provide clear escalation criteria, and fit into referral workflows (referral slips, SMS/phone alerts, district feedback loops).",
+    "confidence": "high",
+    "source": "model knowledge - verify"
+   },
+   {
+    "title": "Growing regulatory and ethical scrutiny on clinical AI",
+    "detail": "Countries are increasingly asking for clinical validation, data governance, and explainability. Even where national AI rules are nascent, ethics committees and procurement bodies demand audit trails and informed consent processes.",
+    "confidence": "medium",
+    "source": "model knowledge - verify"
+   },
+   {
+    "title": "Demand for explainability and audit trails to build trust",
+    "detail": "Clinicians require transparent reasoning, provenance and the ability to audit decisions (for clinical acceptance and medico-legal protection). This favors deterministic decision-support or hybrid models (rules + ML) with logging.",
+    "confidence": "medium",
+    "source": "model knowledge - verify"
+   }
+  ],
+  "competitors": [
+   "Electronic IMCI / e-POCT-style pediatric triage tools (digital IMCI implementations) - model knowledge - verify",
+   "Open-source EHR front-ends used for clinical decision support (OpenMRS, mUzima) - model knowledge - verify",
+   "Standalone consumer/clinic triage apps repurposed for LMIC use (various) - model knowledge - verify",
+   "Local digital health implementers and NGOs that bundle training + workflow change alongside software - model knowledge - verify"
+  ],
+  "risks": [
+   "Incorrect triage leading to missed severe illness or unnecessary referrals (clinical safety / liability)",
+   "Poor data quality from manual entry undermining model performance and trust",
+   "Low clinician/CHW adoption if recommendations are opaque, interrupt workflows, or conflict with local norms",
+   "Regulatory uncertainty or changing procurement requirements in pilot countries",
+   "Operational risk from device availability, charging, and software maintenance in remote clinics"
+  ],
+  "answers_to_peer_questions": [
+   "Planned pilot countries: Kenya and Uganda (recommended). Rationale: both have active digital health ecosystems, widespread use of DHIS2/OpenMRS variants at district level, English-language clinical workforce, large CHW programs and significant donor/NGO activity which facilitates piloting and partner identification. All facts: model knowledge - verify. Verify country-specific procurement, Ministry pilots and donor solicitations with local partners and program offices.",
+   "Target pilot scale & timeline (suggested, indicative): 0-6 months: deploy in 5–10 representative clinics + 20–50 CHWs (usability, offline sync, safety checks); 6–12 months: extend to 20–50 clinics + 100–200 CHWs and integrate basic reporting to district health teams; 12–18 months: larger roll-out to a district (50–150 clinics/CHWs) with MoH pilots and formal evaluation. Choice of grant windows and investor types: short pilots (6–12 months, small N) suit seed grants and NGO implementation funds; district-level 12–18 month pilots are better for government procurement pilots, donor implementation grants, or catalytic VC if traction and safety evidence are demonstrated. These are recommendations — verify operational feasibility and funding windows locally. (model knowledge - verify)"
+  ],
+  "open_questions": [
+   "Exact Ministry of Health procurement pilots, tender timelines and donor solicitations in chosen pilot districts — must be mapped locally.",
+   "Device ownership and charging/infrastructure statistics for target facilities (percent of clinics with smartphones/tablets, charging availability).",
+   "Local regulatory requirements and ethics review timelines for clinical AI in each proposed country.",
+   "Data-sharing agreements, patient-consent norms, and legal constraints for reusing clinical data for model development in each country.",
+   "Potential local implementation partners (NGOs, digital health implementers) and their capacity to support training and supervision."
+  ],
+  "reasoning": "Below are concise answers to the planner’s requests (M001–M005) to guide operational planning. All operational assertions should be verified with local partners and MoH offices before committing resources. (model knowledge - verify)\n\nM001 — Clinical workflows & staffing models (high-level):\n- Triage entry points: patient/guardian arrives at clinic or CHW triages household; initial screen often by a health assistant, nurse, or CHW using paper triage forms or registration desk. Severe-illness cues often recognized visually (breathing difficulty, convulsions) and via short symptom checklists. \n- Typical patient flow: registration (paper or simple digital), triage (vitals/quick symptom screen), clinician consultation (nurse/clinical officer), treatment/referral, pharmacy dispense and record in registers. CHWs identify and refer, often using paper referral slips or SMS. \n- Staffing ratios and hours: small rural clinics commonly staffed by 1–3 clinical staff during daytime; many close evenings/weekends or have on-call arrangements. CHW programs have many community-level volunteers or salaried community health extension workers with varying literacy/digital skills. \n- Connectivity & devices: intermittent/no network; a mixture of personal Android phones, occasional facility tablets, and paper registers. Power outages are common; solar chargers may exist in some facilities. \n- Minimum integration touchpoints for a triage assistant: offline-capable mobile app for triage; local storage for logs; ability to print or generate a simple referral slip (PDF/SMS); lightweight sync for district reporting or supervisory dashboards; simple CSV export/import and optional API to common EHRs (OpenMRS) and DHIS2 reporting. \n\nM003 — Data sources and legal/privacy constraints:\n- Typical data sources: paper registers (outpatient / IMCI registers), referral slips, facility-held triage ledgers, partial EHR installations (OpenMRS variants), facility-level DHIS2 reporting, and CHW registers. \n- Legal/privacy constraints: regulations vary by country; requirements usually include data minimization, patient confidentiality, secure storage and controlled access. Secondary use of patient data for model development commonly requires ethics approval and data-sharing agreements; de-identification is necessary but may not be sufficient depending on jurisdiction. \n- Consent & administrative workflows required: informed consent processes for data capture and secondary use (often embedded in facility registration or separate research consent for pilots), MoH approvals for pilots using facility data, data-sharing agreements with clear retention and deletion policies, and local ethics/IRB clearance for model training or clinical evaluation. \n\nM002 — Evidence required & pragmatic study designs:\n- Evidence required: clinical validity (sensitivity/specificity for identifying severe illness), safety (rate of missed severe cases), usability (task completion times, adherence to recommendations), and implementation outcomes (referral uptake, timeliness, workload impact). Regulatory or procurement bodies will want validation against local standard-of-care and demonstration there are safeguards to prevent harm. \n- Pragmatic study designs:\n  - Phase 1 (feasibility/usability, 0–6 months): 5–10 clinics, mixed-methods usability testing, observe concordance between app vs clinician triage on simulated and real cases; endpoints: usability scores, time-to-triage, critical failure modes. \n  - Phase 2 (prospective validation, 6–12 months): cluster or stepped-wedge pilot across 20–50 clinics comparing app-assisted triage vs standard-of-care; endpoints: sensitivity for detecting severe illness requiring referral, referral appropriateness, adverse events; primary safety endpoint = missed severe illness rate. \n  - Phase 3 (outcomes/implementation, 12–18+ months): larger district-level evaluation testing outcomes (hospital admissions for severe illness, time-to-treatment, mortality where feasible), cost-effectiveness, and scalability metrics. Use mixed methods (quantitative clinical endpoints + qualitative acceptability). \n\nM005 — Competitive landscape & go-to-market levers:\n- Competing products commonly include digital IMCI implementations, local EHR decision-support modules, and consumer triage apps adapted to clinic use. Key differentiators to emphasize: offline-first robustness, low-friction workflows for low-skill users, transparent decision logic and audit logs, local language and guideline alignment, and tight referral / supervisory feedback loops. \n\nM004 — Interoperability standards & technical constraints:\n- Required technical support: Android-first mobile clients, offline-first data layer with conflict resolution and background sync, compact local models or rule engines to run triage logic offline, lightweight encryption at rest and in transit, and minimal dependency on continuous connectivity. \n- Interoperability: support for CSV import/export, simple RESTful APIs for integration with OpenMRS and DHIS2 where available, and HL7 FHIR where partners support it (but don’t assume FHIR will be available in all sites). Prioritize pragmatic file exchange and scheduled push/pull syncs with district servers. \n\nPractical next steps recommended (operational, not funding advice): map district-level MoH contacts in chosen pilot countries, run rapid device and connectivity audits in candidate clinics, obtain local ethics guidance early, and design a 6–12 month phased evaluation that prioritizes safety endpoints and operational feasibility. Verify all country-specific procurement and regulatory details with local partners and authorities, as these change frequently. (model knowledge - verify)"
+ },
+ "funding": {
+  "recommended_stage": "Pre-seed → Pilot (prototype already underway or about to start)",
+  "options": [
+   {
+    "name": "Foundations & Grand Challenge-style pilot grants (e.g., global health foundation proof-of-concept funds)",
+    "category": "Non-dilutive grant (foundation / challenge prize)",
+    "stage_fit": "Pre-seed → early pilot (prototype → small implementation)",
+    "why_relevant": "Foundations commonly fund proof-of-concept and short operational pilots that de-risk clinical AI in low-resource primary care. Typical awards are pilot/proof-of-concept grants (6–18 months funding) or implementation grants that cover staff, local partnerships, and evaluation costs. Eligibility usually requires a clear health impact hypothesis, local partnerships (clinic/district/NGO), and an evaluation plan. Submission timelines vary by foundation but expect periodic calls (2–4 month application windows) and 3–6 month review cycles.",
+    "based_on_insight": "M051, M052, M054, M057 (task-shifting, need for clinical validation, target customers: rural clinics and NGOs)",
+    "source": "model knowledge - verify",
+    "verification_note": "Foundations and challenge funds differ greatly by program; confirm each program's eligibility criteria, award sizes, budgets allowed for evaluation, and application deadlines on the funder's site before applying."
+   },
+   {
+    "name": "District / ministry pilot procurement (local government pilot funding or digital health innovation units)",
+    "category": "Public procurement / pilot (government-run pilot funding)",
+    "stage_fit": "Pre-seed → Pilot → Implementation (proof-to-procurement pipeline)",
+    "why_relevant": "Local health ministries or district health offices often run pilot procurement streams or innovation units that fund short pilots to test digital tools in a set of clinics. Typical awards are pilot contracts (3–12 month pilots) with in-kind commitments (clinic access, staff time) and sometimes small implementation budgets. Eligibility typically requires an MoU with the district/clinic leadership, alignment with national primary-care priorities, and data governance safeguards. RFPs and pilot calls align with budget cycles and can have long lead times (3–9+ months).",
+    "based_on_insight": "M054, M055, M050 (target customers: rural clinics and district hospitals; need to integrate into mixed paper/electronic workflows)",
+    "source": "model knowledge - verify",
+    "verification_note": "Procurement timelines and contracting requirements vary widely by country and district. Confirm procurement rules, pilot acceptance criteria and whether procurement includes purchase orders or just evaluation support."
+   },
+   {
+    "name": "NGO and implementing-partner pilots (donor-funded program partnerships)",
+    "category": "Non-dilutive partnership + sub-award (NGO implementations)",
+    "stage_fit": "Pre-seed → Pilot → Scale via implementer networks",
+    "why_relevant": "Large NGOs and implementers running donor-funded primary-care or CHW programs can run pilots or include tech partners as sub-grantees. Typical award types are subcontracts/sub-awards attached to existing donor programs (6–24 month pilots) and can lead to multi-district roll-outs if results are strong. Eligibility normally requires an operational partner with a history of implementing donor-funded programs and demonstrated capacity to manage human-subjects research if clinical validation is planned.",
+    "based_on_insight": "M056, M057, M051 (CHW integration, NGO demand for primary-care tools, task-shifting)",
+    "source": "model knowledge - verify",
+    "verification_note": "NGOs often require local staffing, M&E plans, and alignment with donor deliverables. Confirm partner interest, sub-award terms and whether the NGO's donor allows technology procurement or requires open-source solutions."
+   },
+   {
+    "name": "Health innovation accelerators & intermediaries (accelerator cohorts, challenge-backed support)",
+    "category": "Accelerator / fellowship (hybrid: non-dilutive support + connections to procurement and investors)",
+    "stage_fit": "Pre-seed → Prototype → Pilot readiness",
+    "why_relevant": "Accelerators focused on global health can provide small grants, mentorship, connections to pilot partners (ministries, NGOs), and investor introductions. Typical support: 3–6 month cohorts with seed grants, pilot introductions, and technical support. Eligibility is usually startup teams with a working prototype, clear pilot plan, and willingness to accept mentorship/cohort commitments.",
+    "based_on_insight": "M049, M051, M054 (need for offline-first apps, clinic usability, district partners)",
+    "source": "model knowledge - verify",
+    "verification_note": "Programs vary in what they offer (cash vs services) and in equity terms. Confirm whether support is non-dilutive, cohort dates, and pilot partnership facilitation specifics."
+   },
+   {
+    "name": "Pre-seed angels, impact investors and early-stage healthtech VCs (convertible note/SAFE or small equity round)",
+    "category": "Dilutive funding (angel syndicates / seed VC)",
+    "stage_fit": "Pre-seed → Seed (to convert successful pilots into product development and regulatory readiness)",
+    "why_relevant": "Investors with an interest in clinical AI or rural/LMIC health provide small pre-seed checks to cover expanded pilots, regulatory and validation work, and hiring. Common deal structures at pre-seed are convertible notes, SAFEs or small priced rounds. Investors expect milestones such as: working offline-capable prototype, pilot MoU or procurement agreement, preliminary clinical validation metrics, local partnerships, and a go-to-market pilot plan. Timelines to funding close vary but expect 2–4 months from first meetings to close for well-prepared teams.",
+    "based_on_insight": "M052, M053, M055 (need for clinical validation, explainability, district engagement)",
+    "source": "model knowledge - verify",
+    "verification_note": "Investor expectations and structure differ; confirm target investor thesis, typical check size, and expected milestones before outreach. Consider offering convertible instruments for speed and minimal dilution at pre-seed."
+   }
+  ],
+  "funding_narrative": "Frame funding asks around measurable clinical impact, risk-reduction steps, and procurement-readiness. For grant and pilot requests: pitch a clear hypothesis (how the AI triage reduces missed urgent cases and reduces unnecessary referrals), an operational pilot plan (2–6 rural clinics or CHW program, offline-first app, integration with referral workflows), and an evaluation plan (pre-specified clinical endpoints, safety monitoring, and ethics approvals). For investors: emphasize de-risking milestones already achieved (working offline prototype, clinician usability testing, MoU with a district/NGO for a pilot), a staged plan to clinical validation and procurement, and an exit path (scale via government procurement or NGO programs). Always highlight explainability, audit logging and data governance built-in to meet growing regulatory scrutiny.",
+  "questions_for_research": [],
+  "reasoning": "Recommended blended approach: combine non-dilutive prototype/pilot grants and implementer-led sub-awards to validate safety, usability and health outcomes in a small number of rural clinics, while raising a small pre-seed convertible round to cover software hardening (offline logic, logging, security), local staffing, regulatory/ethics costs and pilot operations. Sequence and milestones that unlock each source:\n\n- Prototype grant / accelerator support (months 0–6): unlocks once you have a minimum viable offline app and basic usability testing. Use funds to finalize offline clinical logic, implement audit trails and prepare an evaluation protocol. (Foundations / accelerators)\n\n- NGO/district pilot sub-award or ministry pilot procurement (months 4–12): unlocks after securing an MoU with clinic/district partners and IRB/ethics approvals; demonstrate safe operations in 2–6 clinics and basic outcome measures (triage agreement with clinicians, workflow integration). This provides operational validation and local buy-in necessary for scale procurement. (NGO / district procurement)\n\n- Small pre-seed convertible note / SAFE (months 2–8): raise in parallel or immediately after early pilot results to fund expanded pilots, hire a clinical lead, and prepare regulatory documentation. Investors will expect predefined milestones: pilot MoU, initial clinical metrics, retention/usage metrics and a plan for procurement integration. (Angels / impact VCs)\n\n- Scale funding (late seed / Series A): pursue after robust clinical validation, demonstrated value to purchasers (districts/NGOs), and early procurement commitments. Use procurement pilots and NGO partnerships as commercial traction for larger rounds.\n\nBusiness model & GTM summary:\n- Customer segments: small rural primary-care clinics/health posts (clinic-level licenses or device+support), district health offices (district-level deployments via procurement), CHW programs (per-CHW subscriptions or per-referral fee), NGOs/donors (program-level contracts) and national health ministries (procurement contracts). (M054, M055, M056)\n- Buyer economics: districts/NGOs purchase on behalf of clinics and value predictable per-clinic/per-CHW costs plus training and support. Buyers care about staff time saved, reductions in adverse events and simpler referral workflows. Provide TCO scenarios (software subscription + deployment support + optional hardware). (model knowledge - verify)\n- Procurement pathways: 1) small pilots via district innovation units or NGO programs, 2) donor-funded scale via NGO procurement, 3) government tenders for digital health or eHealth frameworks. A pilot → evidence → procurement pathway is typical; local partnerships accelerate acceptance. (M050, M057)\n- Pricing / reimbursement hypotheses: start with low monthly subscription per clinic or per active CHW (or a per-referral fee where acceptable), plus a one-time deployment/training fee. For government buyers, price bundles as multi-year service contracts with SLAs and support. Consider outcome-based pilots with partial payment tied to agreed KPIs with NGOs/districts. (model knowledge - verify)\n- Pilot-to-scale route: run a rigorous pilot with operational metrics (uptime in offline settings, clinician adherence to recommendations, referral completion rates), plus clinical validation for safety. Use NGO/district pilots to secure procurement references, then pursue district-level rollouts or national procurement frameworks. Ensure HMIS integration options (CSV import, minimal APIs, OpenMRS/DHIS2 compatibility) and strong data governance to meet procurement and regulatory expectations. (M049, M050, M052, M053)\n\nCaveats and next steps:\n- All program eligibility, award sizes and timelines must be verified directly with funders, ministries and investors as these change frequently.\n- Prioritize securing at least one local pilot partner (district or NGO) and IRB/ethics approvals early — these are gating items for most donors and government pilots.\n- Prepare two parallel asks: a non-dilutive pilot grant (or accelerator slot) to fund evaluation and an investor pitch for a small convertible note to fund operational scale-up if the pilot is successful."
+ },
+ "outline": {
+  "working_title": "RuralAI Triage — offline-first clinical triage assistant for nurse- & CHW-led rural primary care",
+  "one_line_pitch": "An explainable, offline-first AI + rules triage assistant that helps nurses and CHWs safely escalate urgent cases in low-connectivity rural clinics, designed for mixed paper/EHR workflows and procurement readiness.",
+  "slides": [
+   {
+    "number": 1,
+    "title": "Cover / Hook",
+    "key_points": [
+     "Product: offline-first mobile triage assistant (hybrid rules + ML) for nurse- and CHW-led rural primary-care clinics.",
+     "Primary value: reduce missed urgent cases, standardise escalation, and produce audit trails for procurement and ethics review.",
+     "Why now: increasing attention to clinical AI validation, governance and practical offline tools in low-resource settings."
+    ],
+    "evidence": [
+     "M010 | Planner | plan (solution description and user flow)",
+     "M049 | Research Agent | insight (offline-first app requirement)",
+     "M052 | Research Agent | insight (need for clinical validation and governance)"
+    ],
+    "contributed_by": [
+     "Planner",
+     "Research Agent"
+    ]
+   },
+   {
+    "number": 2,
+    "title": "Problem — what rural clinics face",
+    "key_points": [
+     "Triage is often performed by lower-cadre staff (CHWs, nurses) who must identify and escalate urgent cases safely.",
+     "Intermittent power/connectivity and mixed paper + EHR workflows make conventional cloud-first AI impractical.",
+     "Poor manual-data quality and rising regulatory/ethics scrutiny undermine clinician trust and procurement decisions."
+    ],
+    "evidence": [
+     "M054 | Research Agent | insight (target customer: small rural primary-care clinics)",
+     "M049 | Research Agent | insight (intermittent power/connectivity, offline-first requirement)",
+     "M064 | Research Agent | insight (risk: poor data quality)",
+     "M052 | Research Agent | insight (regulatory/ethical scrutiny)"
+    ],
+    "contributed_by": [
+     "Research Agent",
+     "Planner"
+    ]
+   },
+   {
+    "number": 3,
+    "title": "Solution — how the assistant works",
+    "key_points": [
+     "User flow: CHW/nurse opens offline app → guided form (complaint + vitals) → hybrid rules + on-device model → explainable recommendation (manage, urgent refer, emergency) → printed/SMS referral and audit log.",
+     "Design choices: deterministic rules + ML for explainability, versioned decision logs, local encrypted storage, background sync.",
+     "Interoperability: manual entry, CSV import, minimal API to fit mixed-paper/EHR environments."
+    ],
+    "evidence": [
+     "M010 | Planner | plan (user flow and decisions supported)",
+     "M013 | Planner | plan (data & privacy approach)",
+     "M050 | Research Agent | insight (flexible ingestion for mixed paper + EHR)"
+    ],
+    "contributed_by": [
+     "Planner",
+     "Research Agent"
+    ]
+   },
+   {
+    "number": 4,
+    "title": "Clinical scenarios & inputs",
+    "key_points": [
+     "Representative scenarios: acute febrile illness (red flags), suspected pneumonia (RR, SpO2, danger signs), maternal triage (antenatal danger signs).",
+     "For each scenario the app lists required inputs, decision logic, action and an auditable explanation.",
+     "Minimal sensor needs: optional pulse oximeter; core operation requires only basic Android device and manual inputs."
+    ],
+    "evidence": [
+     "M010 | Planner | plan (typical clinical scenarios)",
+     "M051 | Research Agent | insight (task-shifting and CHW integration)"
+    ],
+    "contributed_by": [
+     "Planner",
+     "Research Agent"
+    ]
+   },
+   {
+    "number": 5,
+    "title": "Product architecture & security",
+    "key_points": [
+     "Offline-first mobile client with local encrypted store, background sync and a lightweight cloud backend for aggregate analytics and model updates.",
+     "Auditability: versioned rules/models, time-stamped logs and consent capture at point-of-care to satisfy ethics/procurement reviewers.",
+     "Security: local encryption, transport encryption on sync, configurable data residency (local-only or centralised) depending on district policy."
+    ],
+    "evidence": [
+     "M014 | Planner | plan (technical architecture & interoperability)",
+     "M013 | Planner | plan (data & privacy approach)",
+     "M052 | Research Agent | insight (validation, governance requirements)"
+    ],
+    "contributed_by": [
+     "Planner",
+     "Research Agent"
+    ]
+   },
+   {
+    "number": 6,
+    "title": "Deployment & operational model (devices, training, support)",
+    "key_points": [
+     "Minimum on-site tech: basic Android phones/tablet per clinic, battery backup (powerbanks/solar), optional pulse oximeter device per site.",
+     "Support model: 1–2 day on-site training for clinicians/CHWs + job aids, district supervisor onboarding, remote support and scheduled on-site refreshers.",
+     "Operations: local device management, periodic model/rule updates via background sync, supervisor dashboards for QA and feedback loops."
+    ],
+    "evidence": [
+     "M014 | Planner | plan (minimal device/IT requirements and on-site training/support)",
+     "M049 | Research Agent | insight (offline-first necessity)"
+    ],
+    "contributed_by": [
+     "Planner",
+     "Research Agent"
+    ]
+   },
+   {
+    "number": 7,
+    "title": "Compact pilot protocol summary",
+    "key_points": [
+     "Design: 2–6 rural clinics (or one CHW program covering similar catchment) over 6 months to demonstrate safety, feasibility and procurement-readiness.",
+     "Primary endpoint: reduction in missed urgent cases (operational definition to be finalised with clinical lead and ethics board). Secondary endpoints: change in referral rate, time-to-referral, data completeness, clinician adherence to recommendations, patient follow-up outcomes.",
+     "Data collection: app encounter logs, paper register cross-checks, supervisor audit forms, and post-encounter follow-up phone calls. Field research officers collect and upload de-identified data. Outcomes adjudication: blinded clinical review panel reviewing de-identified encounter records and referral outcomes."
+    ],
+    "evidence": [
+     "M076 | Funding Advisor | funding (pilot framing: measurable clinical impact; 2–6 clinics)",
+     "M010 | Planner | plan (pilot use and validation)",
+     "M052 | Research Agent | insight (ethics/regulatory expectations and audit trails)"
+    ],
+    "contributed_by": [
+     "Funding Advisor",
+     "Planner",
+     "Research Agent"
+    ]
+   },
+   {
+    "number": 8,
+    "title": "6–12 month timeline with milestones & go/no-go gates",
+    "key_points": [
+     "Month 0–1: finalise protocol, secure MOUs/LOIs with pilot sites, submit ethics/regulatory application.",
+     "Month 2–3: device procurement & configuration, on-site training, baseline data collection.",
+     "Month 4–9: pilot operations and iterative improvements; ongoing M&E and data collection.",
+     "Decision gates: after 3 months operational data review — go/no-go if (a) data completeness >= target threshold, (b) no safety signal in blinded review, (c) minimum clinician uptake/adherence met. Final scale decision at pilot end based on pre-specified primary endpoint and procurement-readiness metrics.",
+     "Time horizon: pilot 6 months typical; extended 9–12 months if ethics approvals or procurement trials require longer follow-up."
+    ],
+    "evidence": [
+     "Peer feedback (Funding Advisor) — requested timeline & gates",
+     "M076 | Funding Advisor | funding (pilot framing and procurement-readiness)",
+     "M013 | Planner | plan (ethics & M&E needs)"
+    ],
+    "contributed_by": [
+     "Funding Advisor",
+     "Planner"
+    ]
+   },
+   {
+    "number": 9,
+    "title": "Funding asks — 3 realistic scenarios & itemised use-of-funds (model figures — verify)",
+    "key_points": [
+     "Scenario A – Small proof-of-concept grant (6 months): focused on 2 clinics to show basic safety and feasibility. (Suggested ask: model knowledge - verify: USD 40k–80k).",
+     "Scenario B – Standard pilot grant (9 months): 4 clinics, full M&E, ethics submission and modest device procurement. (Suggested ask: model knowledge - verify: USD 120k–250k).",
+     "Scenario C – Larger district pilot / scale-readiness (12 months): 6 clinics, stronger implementation support, procurement readiness work and district engagement. (Suggested ask: model knowledge - verify: USD 300k–600k).",
+     "Itemised use-of-funds (major lines; unit costs are illustrative — model knowledge - verify): device procurement (Android tablet/phone @ USD 100–300 each; pulse oximeter @ USD 20–70 each); product dev & QA (feature dev, on-device model tuning) — person-months; field ops (local field officer salary or per-diem, travel & allowances); on-site training & refresher sessions (trainer days, materials); M&E/data collection & analysis (field data officers, statistician, monitoring tools); ethics/regulatory fees and translation; IT/data-security/compliance work (encryption, secure hosting, SOC-like checklist); overhead (institutional/admin) and 10–15% contingency.",
+     "All dollar figures and unit costs are model knowledge - verify; founder must confirm local device/pricing, salary scales, ethics fees and procurement timelines before applying."
+    ],
+    "evidence": [
+     "Peer feedback (Funding Advisor) — requested funding scenarios, itemised use-of-funds and cost lines",
+     "M076 | Funding Advisor | funding (funding framing)",
+     "M014 | Planner | plan (device & dev costs implied by deployment needs)"
+    ],
+    "contributed_by": [
+     "Funding Advisor",
+     "Planner"
+    ]
+   },
+   {
+    "number": 10,
+    "title": "Which funder type for which instrument",
+    "key_points": [
+     "Foundation / public-health grant: proof-of-concept grant to cover pilot ops, M&E and ethics (short-term non-dilutive). Target ask: Scenario A or B depending on scope.",
+     "Accelerator / implementation partners: non-dilutive support + mentorship and procurement introductions; useful for procurement-readiness and district introductions (Scenario B).",
+     "District / Ministry procurement contract or innovation fund: scoped pilot procurement contract to embed the tool in routine workflows (Scenario C; aim to demonstrate procurement-readiness metrics required by buyer).",
+     "Seed investors / angels (dilutive): pursue only after pilot demonstrates measurable impact and procurement interest — use for product scaling, commercialisation and hiring (next-stage ask estimated separately).",
+     "Founder action: map each funder approach to a concrete ask and required deliverables (e.g., foundation grant to cover pilot ops & M&E for X months; accelerator cohort to cover implementation support & introductions)."
+    ],
+    "evidence": [
+     "M076 | Funding Advisor | funding (recommended funder types and narrative)",
+     "M015 | Planner | plan (procurement and pilot-to-scale routes)"
+    ],
+    "contributed_by": [
+     "Funding Advisor",
+     "Planner"
+    ]
+   },
+   {
+    "number": 11,
+    "title": "Procurement-readiness metrics, buyer economics & partner commitments",
+    "key_points": [
+     "Procurement-readiness metrics to demonstrate in pilot: per-facility and per-patient cost estimates (model knowledge - verify), clinician time-savings (minutes per encounter saved), escalation/referral accuracy targets, data completeness threshold (e.g., % of required fields captured), and safety (no increase in missed urgent cases).",
+     "Buyer economics to articulate: expected per-patient cost vs current pathway, operational savings from faster referral, supervisor time-savings from digital audit trails and reduction in unnecessary referrals.",
+     "Partner commitments: plan to secure MOUs/LOIs from pilot clinics and a district health office before applications; show signed LOIs in appendix. (Founder to obtain and insert MOUs/LOIs)."
+    ],
+    "evidence": [
+     "Peer feedback (Funding Advisor) — requested procurement-readiness metrics and MOUs/LOIs",
+     "M015 | Planner | plan (buyer economics & procurement pathways)"
+    ],
+    "contributed_by": [
+     "Funding Advisor",
+     "Planner"
+    ]
+   },
+   {
+    "number": 12,
+    "title": "Team, next-stage funding triggers & verification note",
+    "key_points": [
+     "Team asks: clinical lead, product/tech lead, field ops/pilot lead, data security officer — list current bios and key hires required for pilot.",
+     "Next-stage funding: after a successful pilot (meeting primary endpoint and procurement interest), consider seed/angel raise to scale product dev, expand to more districts and recruit commercial/business development staff. Estimated next-stage ask and runway should be prepared after pilot; figures here would be model knowledge - verify.",
+     "Important: always verify funder eligibility, award sizes and deadlines with funders themselves before applying — funding programs change often."
+    ],
+    "evidence": [
+     "M075 | Funding Advisor | funding (recommended stage: pre-seed → pilot)",
+     "Peer feedback (Funding Advisor) — requested next-stage funding paragraph and verification note",
+     "M013 | Planner | plan (ethics & regulatory preparedness)"
+    ],
+    "contributed_by": [
+     "Funding Advisor",
+     "Planner"
+    ]
+   }
+  ],
+  "changes_from_feedback": [
+   "Added 2–3 realistic funding ask scenarios (A,B,C) with itemised use-of-funds major line items and illustrative unit costs (labelled 'model knowledge - verify').",
+   "Expanded slide on deployment to include explicit device lists and training/support model and named cost lines.",
+   "Added a compact pilot protocol slide with clinic-count justification (2–6 clinics), primary/secondary endpoints, data instruments, data collectors and blinded adjudication plan.",
+   "Included a 6–12 month timeline with concrete milestones and go/no-go decision gates tied to measurable outcomes (data completeness, safety/adjudication, clinician uptake).",
+   "Mapped funder types (foundation grant, accelerator, district procurement contract, seed investors) to the exact instrument/ask to pursue for each pilot stage.",
+   "Specified explicit cost categories requested in feedback: device procurement & management; on-site training and refresher sessions; local field staff salaries/per-diem; travel & allowances; M&E/data collection & analysis; ethics/regulatory submission costs; IT/data-security/compliance; overhead and contingency.",
+   "Added procurement-readiness metrics and suggested buyer economics to demonstrate in pilot (per-patient/per-facility cost, clinician time-savings, referral accuracy targets).",
+   "Added a plan to obtain partner MOUs/LOIs and to show them in the slide or appendix, and marked this as a required founder action.",
+   "Included a short paragraph on expected next-stage dilutive funding triggers and the need to prepare runway estimates after pilot success.",
+   "Added an explicit note to verify eligibility, award sizes and deadlines with each funder/program before applying."
+  ],
+  "gaps_in_inputs": [
+   "Local unit costs: exact device unit prices (tablets/phones/pulse oximeters) in target country(s) — needed to finalise budget.",
+   "Local salary scales and per-diem/travel rates for field staff and trainers to finalise personnel lines.",
+   "Baseline epidemiological metrics: current missed urgent-case rate, baseline referral rate and average clinic volumes to power sample size and set endpoint targets.",
+   "Site-level commitments: signed MOUs/LOIs from 2–6 pilot clinics and a district health office to attach to funding applications.",
+   "Country-specific ethics/regulatory submission fees and timelines to estimate lead time and costs.",
+   "Precise next-stage funding target and runway needs post-pilot (founder inputs required).",
+   "Any existing prototype metrics (usability, preliminary accuracy) and team bios to populate the Team/Ask slide."
+  ],
+  "reasoning": "I synthesised the Planner's technical and deployment requirements, the Research Agent's constraints around data quality, mixed records and offline operation, and the Funding Advisor's specific fundraising and procurement-readiness requests. The output preserves the original product narrative (offline-first hybrid rules+ML triage assistant for nurse/CHW workflows) and adds the detailed pilot protocol, timeline with measurable go/no-go gates, funding scenarios and an itemised set of cost lines requested by peers. Monetary figures and unit-costs are presented as illustrative 'model knowledge - verify' because the project materials did not include local prices, salaries or exact award sizes — founders must confirm these before applying. The slide evidence fields cite the agent inputs used so the founder can trace back which research insights support each element."
+ },
+ "reviews": [
+  {
+   "reviewer": "Research Agent",
+   "round": 1,
+   "approved": true,
+   "score": 4,
+   "issues": [
+    "Several assertions are stated too absolutely without cited local verification (e.g., \"offline-first is the practical norm\" and procurement pathways). These are plausible but should be hedged or sourced before use in investor-facing claims.",
+    "Some operational numbers/choices are presented as recommendations (e.g., pilot size 2–6 clinics) but are unverified and context-dependent — label them as hypotheses or provide rationale/benchmarks.",
+    "Regulatory and ethical claims are presented at high level but vary widely by country; don’t imply uniform regulatory requirements or readiness across jurisdictions.",
+    "Competitor references (OpenMRS, mUzima, digital IMCI/e-POCT-style tools, consumer triage chatbots) are plausible but currently uncited in the deck — map direct functional overlap and differentiation explicitly.",
+    "Statements that explainability/audit trails will satisfy clinicians and medico-legal needs are reasonable but not guaranteed — avoid implying that explainability alone ensures adoption or legal protection."
+   ],
+   "requested_changes": [
+    "Replace absolute phrasing with hedged language or cite local evidence (e.g., change \"are the practical norm\" → \"are commonly required\" or add a source). Label these as model knowledge - verify where you currently have no citation.",
+    "Mark pilot sizing (\"2–6 clinics\") clearly as a working hypothesis with rationale (cost, operational complexity, statistical power if claiming impact) or provide past benchmarks if available.",
+    "Add a short slide note (or slide appendix) stating that regulatory requirements differ by country and that the team will validate local expectations with national regulators and ethics committees prior to pilot — don’t imply a one-size-fits-all regulatory path.",
+    "On the competitors slide, add brief, sourced comparisons: which features overlap (offline operation, decision rules, referral slips) and which are differentiators (hybrid rules+ML, auditability, CHW-focused UX). If you lack citations, label statements as model knowledge - verify and commit to rapid competitor intelligence work prior to fundraising.",
+    "Soften claims that explainability/audit trails will be sufficient for clinician trust or medico-legal protection. Instead, state they’re necessary mitigations and list complementary adoption activities (training, supervision, local validation)."
+   ],
+   "reasoning": "I reviewed the outline against the research-area assertions you provided. The core market/operational claims are consistent with domain knowledge but several are stated as facts without local validation or citations. Specific points: - Offline-first and mixed paper+EHR workflows: This is consistent with my summary (confidence high) but should be presented as commonly observed in many low-resource rural settings rather than universal — label as model knowledge - verify unless you can cite local assessments or partners. - Task-shifting / CHW-driven design: Correct and appropriately emphasized (model knowledge - verify). Make explicit that workflows vary by country and program. - Explainability / audit trails / regulatory scrutiny: These are growing trends (confidence medium) but regulatory requirements and the weight given to explainability differ by jurisdiction; avoid implying a uniform regulatory roadmap. - Customers & procurement: The customer segments listed are appropriate, and pilots via foundations/district bodies is a plausible go-to-market path (model knowledge - verify). However procurement realities and timelines vary; don’t state procurement routes as certain. - Competitors & risks: The competitors listed are reasonable examples (digital IMCI implementations, OpenMRS front-ends, consumer triage bots) but the deck should explicitly map overlap and differentiation and avoid implying those competitors are direct substitutes without validation. - Pilot size and funding recommendations: Reasonable but context-dependent — present as hypotheses and ask investors for input or cite examples. Overall the deck is founder-ready in structure and content but needs modest rewording and explicit labeling of assumptions/uncertainties. Where assertions are based on general domain knowledge rather than specific cited research, mark them as model knowledge - verify and commit to validating them with on-the-ground partners or references. Also verify any funding program eligibility/amounts/deadlines with the programs themselves."
+  },
+  {
+   "reviewer": "Funding Advisor",
+   "round": 1,
+   "approved": false,
+   "score": 3,
+   "issues": [
+    "Slide 12 leaves the ask unspecified and the use-of-funds too high-level for funders to evaluate credibility (no itemised budget, unit costs or cost drivers).",
+    "No timeline, milestones or explicit go/no-go decision gates tied to the pilot outcomes (funders expect milestone-based plans).",
+    "Pilot description lacks measurable endpoints, sample-size logic or data collection/M&E plan (e.g., how you will measure 'reduced missed urgent cases' or 'reduced unnecessary referrals').",
+    "No explicit mapping of which funding instrument you will pursue per funder type (grant/subaward, procurement contract, accelerator stipend, or equity) or indicative amounts/typical award sizes.",
+    "Key cost lines are missing or not visible: device procurement, field operations/travel, training, local staff salaries, M&E/data collection, ethics/regulatory approvals, data security/compliance, and contingency.",
+    "Procurement-readiness metrics and buyer economics are not quantified (e.g., expected per-facility cost, cost-savings or efficiency gains for districts) — important when pitching to district/ministry pilots or NGOs.",
+    "No evidence of partner commitments (MOUs/LOIs) or letters of interest from clinics/districts/NGOs, which many funders require or expect to see for pilot funding.",
+    "No explicit budget or plan for documentation needed by ethics committees and procurement bodies (protocol write-up, anonymisation plan, legal review)."
+   ],
+   "requested_changes": [
+    "Specify the funding ask (or at least present 2–3 realistic ask scenarios) and include an itemised use-of-funds budget with major line items and unit costs (product dev, devices, field ops, training, M&E / data collection, ethics/regulatory, data security, overhead, and contingency).",
+    "Add a 6–12 month timeline with concrete milestones and go/no-go decision gates tied to measurable outcomes (e.g., target reduction in missed urgent cases, referral rate change, data completeness thresholds).",
+    "Include a compact pilot protocol summary: sample size or clinic count justification (your 2–6 clinics), primary and secondary endpoints, data collection instruments, who collects data, and how blinded/adjudicated outcomes will be assessed.",
+    "Map each recommended funder type to the exact ask/instrument you will pursue (example: foundation proof-of-concept grant for X months and $A to cover pilot ops and M&E; accelerator cohort for $B non-dilutive support + mentorship; district pilot procurement contract for a scoped implementation) and label these as intentions to verify with each program.",
+    "Add explicit cost lines and descriptions for: device procurement and management; on-site training and refresher sessions; local field staff salaries / per-diem; travel and allowances; M&E/data collection and analysis; ethics/regulatory submission costs; and an IT/data-security/compliance budget.",
+    "State procurement-readiness metrics and buyer economics you will demonstrate in the pilot (e.g., per-patient or per-facility cost, expected clinician time-savings, escalation/referral accuracy targets) so districts/ministry buyers can assess value.",
+    "Attach or plan to obtain partner commitments (MOUs/LOIs) from clinics, CHW programs, or a district health office, and show these in the slide or an appendix.",
+    "Add a short paragraph on expected next-stage funding needs and trigger conditions for pursuing dilutive capital (seed investors/angels) after a successful pilot — include runway estimates or amounts to be confirmed.",
+    "Include an explicit note to verify eligibility, award sizes and deadlines with specific funders/programs before applying (funding programs change often)."
+   ],
+   "reasoning": "The deck's stated stage (Pre-seed → Pilot) and the high-level use-of-funds align with the funding channels you recommended (foundations/GRANTS, district pilots, NGO subawards, accelerators, early-stage investors). The narrative appropriately frames funders' expectations around measurable clinical impact, de-risking, and procurement-readiness. However, to be credible to the specific funders listed, the funding ask slide needs more granularity: an itemised budget and unit costs, clear milestones and go/no-go criteria, a summarized pilot protocol with endpoints and data collection plans, and explicit mapping of which funder/instrument will be asked for which amount or support. Funders (and procurement offices) routinely expect those elements to judge feasibility and value-for-money; without them the ask appears underspecified. Model knowledge - verify: include device, training, and ethics/regulatory cost lines and a contingency (these are common cost drivers in rural pilot budgets). Also verify eligibility, award sizes and deadlines directly with target programs because funding mechanisms change frequently."
+  },
+  {
+   "reviewer": "Research Agent",
+   "round": 2,
+   "approved": false,
+   "score": 3,
+   "issues": [
+    "Several high‑level market and operational claims are presented without citation and rely on general knowledge; these should be explicitly labelled 'model knowledge - verify' or replaced with country/region specific citations.",
+    "The pilot (2–6 clinics over 6 months) is proposed to demonstrate a clinical outcome (reduction in missed urgent cases) but no power/sample‑size justification or baseline rate is provided — this risks an underpowered study and overstating likely impact.",
+    "Statements implying the product will 'reduce missed urgent cases' or be procurement‑ready after the pilot read as outcome claims rather than hypotheses to be tested; they should be softened and framed as pilot objectives until demonstrated.",
+    "Regulatory and procurement statements (e.g., increasing clinical AI scrutiny, routes to district/ministry procurement) are plausible but vary substantially by country and are not referenced — founders must verify locally.",
+    "Cost figures and funding ask ranges are placeholders (device unit costs, USD amounts for scenarios) and marked 'model knowledge - verify' in the deck — these must be verified with up‑to‑date quotes and funder guidance before inclusion.",
+    "Data completeness / go/no‑go thresholds are listed conceptually but lack numeric targets and justification; target thresholds should be defined based on realistic field constraints and used to inform the sample size.",
+    "Safety monitoring and stopping rules are referred to (no safety signal in blinded review) but lack operational definition (what constitutes a safety signal?) and an independent review process.",
+    "Claims about common EHR stacks (OpenMRS variants, DHIS2 reporting) and mixed paper workflows are reasonable generalizations but should be qualified by region and labelled 'model knowledge - verify' unless supported by local partner data."
+   ],
+   "requested_changes": [
+    "Explicitly label market/operational claims that come from general domain knowledge as 'model knowledge - verify' in speaker notes (e.g., offline-first being the practical norm; common use of mixed paper + OpenMRS/DHIS2).",
+    "Replace any definitive outcome language ('reduce missed urgent cases', 'procurement‑ready') with hypothesis/objective language in the pitch (e.g., 'aim to reduce… to be evaluated in pilot').",
+    "Add a short statistical appendix / slide or speaker note with: (a) baseline rate assumptions for the primary endpoint (missed urgent cases), (b) a justification or calculation for the proposed sample size (or a statement that this pilot is feasibility/signal‑finding and not powered for effectiveness), and (c) expected effect size the pilot is designed to detect (or state it is not powered).",
+    "Define numeric go/no‑go criteria and explain how they were chosen (e.g., data completeness ≥ X%, adverse event rate ≤ Y per 1,000 encounters). If exact numbers are unknown, state that thresholds will be set a priori with the clinical lead and ethics board.",
+    "Specify the safety monitoring plan and independent review process: what constitutes a safety signal, who will review (blinded clinical reviewer or DSMB), and what operational steps will be taken if a signal is detected.",
+    "Replace placeholder funding amounts and unit costs with verified quotes or clearly label them as illustrative 'model knowledge - verify' and commit to updating before any funder submission.",
+    "Qualify regulatory/procurement pathway claims: add a note that national medical device/clinical decision support regulations and procurement rules vary, and that the team will verify requirements and timelines with each target district/ministry before pilot launch (model knowledge - verify).",
+    "If possible, include at least one citation or local partner statement (MOUs/LOIs) that supports claims about workflow realities (paper + EHR, CHW triage role) for the specific country/region targeted by the pilot; otherwise flag these as assumptions to be validated during site selection."
+   ],
+   "reasoning": "From a research/field‑validation perspective the overall outline is well structured and addresses the right high‑level issues (offline operation, mixed workflows, explainability, audit trails). However, several market and outcome claims are stated as facts without explicit sourcing and key trial design elements are underspecified. The proposed pilot scale (2–6 clinics) can be appropriate for feasibility and safety signal detection, but it is unlikely to provide definitive evidence of reduced missed urgent cases unless accompanied by a power calculation and realistic baseline assumptions. Regulatory/procurement assertions and cost figures vary by country and should be verified with local partners and up‑to‑date vendor/funder information. I recommend the requested changes above before calling the deck founder‑ready for funder submissions that claim clinical impact or procurement readiness."
+  },
+  {
+   "reviewer": "Funding Advisor",
+   "round": 2,
+   "approved": false,
+   "score": 2,
+   "issues": [
+    "Funding-ask slide contains placeholders ('model knowledge - verify') rather than concrete, evidence-backed amounts — funders expect specific asks and line-item budgets for each scenario.",
+    "Unit-costs and use-of-funds are described only at a high level; key budget lines are missing or not specified (local partner/sub-award, field staff FTEs and rates, travel/per diems, IRB/ethics fees, data hosting/compliance, model maintenance & updates, contingency, procurement support).",
+    "No per-site or per-patient cost model with assumptions is shown — this is essential for procurement-readiness conversations with districts and NGOs.",
+    "Mapping from each funding scenario (A/B/C) to specific funder instruments and realistic award sizes is missing; the deck suggests which funder types to target but does not show credible target asks or examples from grant programs to justify those asks.",
+    "Procurement-readiness metrics and buyer-economics slide remains high-level and lists 'model knowledge - verify' for costs and savings — without a worked example the deck will not persuade procurement officers or implementer partners.",
+    "MOUs/LOIs are mentioned as necessary but not shown; funders expect at least draft MOUs or named partner commitments in applications for operational pilots.",
+    "Budget timeline alignment is not explicit — it is not clear that the proposed budget scenarios fully cover the staff and operational costs across the stated timelines and go/no-go gates."
+   ],
+   "requested_changes": [
+    "Replace all 'model knowledge - verify' placeholders with concrete, evidence-backed figures and cite supporting sources (vendor quotes, past project budgets, or funder award examples). If you use my general knowledge for numbers, label them 'model knowledge - verify' and flag them for confirmation.",
+    "Provide a detailed, itemised budget per scenario (A/B/C) including: personnel (roles, FTE %, local rates), local partner/sub-award, device procurement (unit cost × quantity × shipping/taxes), consumables, pulse oximeters (unit costs), training (trainer days, per diems, materials), travel & accommodation, field research officer time, M&E & data analysis, ethics/IRB fees, data hosting & security/compliance, contingency (suggest ~10–15% — model knowledge - verify), and overhead/subcontract management fees.",
+    "Add a per-site and per-patient cost table (with assumptions: expected encounters per month/site) so you can show buyer economics and compare expected per-patient cost vs current pathway. State all assumptions clearly and mark anything that is estimated as 'model knowledge - verify'.",
+    "For each funding scenario, map to 2–3 concrete funder program examples or types and state expected award ranges or typical instruments (grant, contract, accelerator stipend, equity) — verify award sizes and eligibility with the funder before applying.",
+    "Include line items and timeline linkage for the go/no-go gates (e.g., budget reserved for 3-month interim blinded safety review, independent statistician or DSMB, contingency to run extra training if data completeness is below threshold).",
+    "Show evidence of partner commitments (draft MOUs/LOIs) in the appendix or state when they will be secured; funders will treat the ask as higher-risk without named partners.",
+    "Add a short note in the funding slide explaining what deliverables each funder will receive (pilot report, data extracts, procurement-readiness dossier, capacity-building deliverables) and how those deliverables align to the funder's goals."
+   ],
+   "reasoning": "The deck's narrative, pilot design (2–6 clinics), timeline and funder targeting align well with the recommended pre-seed → pilot stage and the types of funders you advocated (foundations, district procurement, NGOs, accelerators, then investors). However, credibility with those funders depends on concrete, justified budget asks and a clear mapping of ask → deliverables → procurement-readiness outcomes. Right now the funding slide and use-of-funds lines mostly contain placeholders and high-level categories; that is insufficient for grant reviewers, procurement officers or implementing NGOs, who will ask for unit costs, partner commitments, and a per-site/patient cost model. Fixing the requested changes will make the funding ask credible and aligned to the recommended funder types. Always verify eligibility, award sizes and deadlines directly with target funders (funding programs change often)."
+  }
+ ],
+ "research_requests": [],
+ "pitch_feedback": [
+  "(Research Agent) Explicitly label market/operational claims that come from general domain knowledge as 'model knowledge - verify' in speaker notes (e.g., offline-first being the practical norm; common use of mixed paper + OpenMRS/DHIS2).",
+  "(Research Agent) Replace any definitive outcome language ('reduce missed urgent cases', 'procurement‑ready') with hypothesis/objective language in the pitch (e.g., 'aim to reduce… to be evaluated in pilot').",
+  "(Research Agent) Add a short statistical appendix / slide or speaker note with: (a) baseline rate assumptions for the primary endpoint (missed urgent cases), (b) a justification or calculation for the proposed sample size (or a statement that this pilot is feasibility/signal‑finding and not powered for effectiveness), and (c) expected effect size the pilot is designed to detect (or state it is not powered).",
+  "(Research Agent) Define numeric go/no‑go criteria and explain how they were chosen (e.g., data completeness ≥ X%, adverse event rate ≤ Y per 1,000 encounters). If exact numbers are unknown, state that thresholds will be set a priori with the clinical lead and ethics board.",
+  "(Research Agent) Specify the safety monitoring plan and independent review process: what constitutes a safety signal, who will review (blinded clinical reviewer or DSMB), and what operational steps will be taken if a signal is detected.",
+  "(Research Agent) Replace placeholder funding amounts and unit costs with verified quotes or clearly label them as illustrative 'model knowledge - verify' and commit to updating before any funder submission.",
+  "(Research Agent) Qualify regulatory/procurement pathway claims: add a note that national medical device/clinical decision support regulations and procurement rules vary, and that the team will verify requirements and timelines with each target district/ministry before pilot launch (model knowledge - verify).",
+  "(Research Agent) If possible, include at least one citation or local partner statement (MOUs/LOIs) that supports claims about workflow realities (paper + EHR, CHW triage role) for the specific country/region targeted by the pilot; otherwise flag these as assumptions to be validated during site selection.",
+  "(Funding Advisor) Replace all 'model knowledge - verify' placeholders with concrete, evidence-backed figures and cite supporting sources (vendor quotes, past project budgets, or funder award examples). If you use my general knowledge for numbers, label them 'model knowledge - verify' and flag them for confirmation.",
+  "(Funding Advisor) Provide a detailed, itemised budget per scenario (A/B/C) including: personnel (roles, FTE %, local rates), local partner/sub-award, device procurement (unit cost × quantity × shipping/taxes), consumables, pulse oximeters (unit costs), training (trainer days, per diems, materials), travel & accommodation, field research officer time, M&E & data analysis, ethics/IRB fees, data hosting & security/compliance, contingency (suggest ~10–15% — model knowledge - verify), and overhead/subcontract management fees.",
+  "(Funding Advisor) Add a per-site and per-patient cost table (with assumptions: expected encounters per month/site) so you can show buyer economics and compare expected per-patient cost vs current pathway. State all assumptions clearly and mark anything that is estimated as 'model knowledge - verify'.",
+  "(Funding Advisor) For each funding scenario, map to 2–3 concrete funder program examples or types and state expected award ranges or typical instruments (grant, contract, accelerator stipend, equity) — verify award sizes and eligibility with the funder before applying.",
+  "(Funding Advisor) Include line items and timeline linkage for the go/no-go gates (e.g., budget reserved for 3-month interim blinded safety review, independent statistician or DSMB, contingency to run extra training if data completeness is below threshold).",
+  "(Funding Advisor) Show evidence of partner commitments (draft MOUs/LOIs) in the appendix or state when they will be secured; funders will treat the ask as higher-risk without named partners.",
+  "(Funding Advisor) Add a short note in the funding slide explaining what deliverables each funder will receive (pilot report, data extracts, procurement-readiness dossier, capacity-building deliverables) and how those deliverables align to the funder's goals."
+ ],
+ "research_followups": 1,
+ "review_round": 2,
+ "max_review_rounds": 2,
+ "final_markdown": "# RuralAI Triage — offline-first clinical triage assistant for nurse- & CHW-led rural primary care\n*An explainable, offline-first AI + rules triage assistant that helps nurses and CHWs safely escalate urgent cases in low-connectivity rural clinics, designed for mixed paper/EHR workflows and procurement readiness.*\n\n**Domain:** healthtech  \n**Recommended funding stage:** Pre-seed → Pilot (prototype already underway or about to start)\n\n## Pitch deck outline\n\n### Slide 1: Cover / Hook\n- Product: offline-first mobile triage assistant (hybrid rules + ML) for nurse- and CHW-led rural primary-care clinics.\n- Primary value: reduce missed urgent cases, standardise escalation, and produce audit trails for procurement and ethics review.\n- Why now: increasing attention to clinical AI validation, governance and practical offline tools in low-resource settings.\n  - *Evidence:* M010 | Planner | plan (solution description and user flow); M049 | Research Agent | insight (offline-first app requirement); M052 | Research Agent | insight (need for clinical validation and governance)\n  - *Contributed by:* Planner, Research Agent\n\n### Slide 2: Problem — what rural clinics face\n- Triage is often performed by lower-cadre staff (CHWs, nurses) who must identify and escalate urgent cases safely.\n- Intermittent power/connectivity and mixed paper + EHR workflows make conventional cloud-first AI impractical.\n- Poor manual-data quality and rising regulatory/ethics scrutiny undermine clinician trust and procurement decisions.\n  - *Evidence:* M054 | Research Agent | insight (target customer: small rural primary-care clinics); M049 | Research Agent | insight (intermittent power/connectivity, offline-first requirement); M064 | Research Agent | insight (risk: poor data quality); M052 | Research Agent | insight (regulatory/ethical scrutiny)\n  - *Contributed by:* Research Agent, Planner\n\n### Slide 3: Solution — how the assistant works\n- User flow: CHW/nurse opens offline app → guided form (complaint + vitals) → hybrid rules + on-device model → explainable recommendation (manage, urgent refer, emergency) → printed/SMS referral and audit log.\n- Design choices: deterministic rules + ML for explainability, versioned decision logs, local encrypted storage, background sync.\n- Interoperability: manual entry, CSV import, minimal API to fit mixed-paper/EHR environments.\n  - *Evidence:* M010 | Planner | plan (user flow and decisions supported); M013 | Planner | plan (data & privacy approach); M050 | Research Agent | insight (flexible ingestion for mixed paper + EHR)\n  - *Contributed by:* Planner, Research Agent\n\n### Slide 4: Clinical scenarios & inputs\n- Representative scenarios: acute febrile illness (red flags), suspected pneumonia (RR, SpO2, danger signs), maternal triage (antenatal danger signs).\n- For each scenario the app lists required inputs, decision logic, action and an auditable explanation.\n- Minimal sensor needs: optional pulse oximeter; core operation requires only basic Android device and manual inputs.\n  - *Evidence:* M010 | Planner | plan (typical clinical scenarios); M051 | Research Agent | insight (task-shifting and CHW integration)\n  - *Contributed by:* Planner, Research Agent\n\n### Slide 5: Product architecture & security\n- Offline-first mobile client with local encrypted store, background sync and a lightweight cloud backend for aggregate analytics and model updates.\n- Auditability: versioned rules/models, time-stamped logs and consent capture at point-of-care to satisfy ethics/procurement reviewers.\n- Security: local encryption, transport encryption on sync, configurable data residency (local-only or centralised) depending on district policy.\n  - *Evidence:* M014 | Planner | plan (technical architecture & interoperability); M013 | Planner | plan (data & privacy approach); M052 | Research Agent | insight (validation, governance requirements)\n  - *Contributed by:* Planner, Research Agent\n\n### Slide 6: Deployment & operational model (devices, training, support)\n- Minimum on-site tech: basic Android phones/tablet per clinic, battery backup (powerbanks/solar), optional pulse oximeter device per site.\n- Support model: 1–2 day on-site training for clinicians/CHWs + job aids, district supervisor onboarding, remote support and scheduled on-site refreshers.\n- Operations: local device management, periodic model/rule updates via background sync, supervisor dashboards for QA and feedback loops.\n  - *Evidence:* M014 | Planner | plan (minimal device/IT requirements and on-site training/support); M049 | Research Agent | insight (offline-first necessity)\n  - *Contributed by:* Planner, Research Agent\n\n### Slide 7: Compact pilot protocol summary\n- Design: 2–6 rural clinics (or one CHW program covering similar catchment) over 6 months to demonstrate safety, feasibility and procurement-readiness.\n- Primary endpoint: reduction in missed urgent cases (operational definition to be finalised with clinical lead and ethics board). Secondary endpoints: change in referral rate, time-to-referral, data completeness, clinician adherence to recommendations, patient follow-up outcomes.\n- Data collection: app encounter logs, paper register cross-checks, supervisor audit forms, and post-encounter follow-up phone calls. Field research officers collect and upload de-identified data. Outcomes adjudication: blinded clinical review panel reviewing de-identified encounter records and referral outcomes.\n  - *Evidence:* M076 | Funding Advisor | funding (pilot framing: measurable clinical impact; 2–6 clinics); M010 | Planner | plan (pilot use and validation); M052 | Research Agent | insight (ethics/regulatory expectations and audit trails)\n  - *Contributed by:* Funding Advisor, Planner, Research Agent\n\n### Slide 8: 6–12 month timeline with milestones & go/no-go gates\n- Month 0–1: finalise protocol, secure MOUs/LOIs with pilot sites, submit ethics/regulatory application.\n- Month 2–3: device procurement & configuration, on-site training, baseline data collection.\n- Month 4–9: pilot operations and iterative improvements; ongoing M&E and data collection.\n- Decision gates: after 3 months operational data review — go/no-go if (a) data completeness >= target threshold, (b) no safety signal in blinded review, (c) minimum clinician uptake/adherence met. Final scale decision at pilot end based on pre-specified primary endpoint and procurement-readiness metrics.\n- Time horizon: pilot 6 months typical; extended 9–12 months if ethics approvals or procurement trials require longer follow-up.\n  - *Evidence:* Peer feedback (Funding Advisor) — requested timeline & gates; M076 | Funding Advisor | funding (pilot framing and procurement-readiness); M013 | Planner | plan (ethics & M&E needs)\n  - *Contributed by:* Funding Advisor, Planner\n\n### Slide 9: Funding asks — 3 realistic scenarios & itemised use-of-funds (model figures — verify)\n- Scenario A – Small proof-of-concept grant (6 months): focused on 2 clinics to show basic safety and feasibility. (Suggested ask: model knowledge - verify: USD 40k–80k).\n- Scenario B – Standard pilot grant (9 months): 4 clinics, full M&E, ethics submission and modest device procurement. (Suggested ask: model knowledge - verify: USD 120k–250k).\n- Scenario C – Larger district pilot / scale-readiness (12 months): 6 clinics, stronger implementation support, procurement readiness work and district engagement. (Suggested ask: model knowledge - verify: USD 300k–600k).\n- Itemised use-of-funds (major lines; unit costs are illustrative — model knowledge - verify): device procurement (Android tablet/phone @ USD 100–300 each; pulse oximeter @ USD 20–70 each); product dev & QA (feature dev, on-device model tuning) — person-months; field ops (local field officer salary or per-diem, travel & allowances); on-site training & refresher sessions (trainer days, materials); M&E/data collection & analysis (field data officers, statistician, monitoring tools); ethics/regulatory fees and translation; IT/data-security/compliance work (encryption, secure hosting, SOC-like checklist); overhead (institutional/admin) and 10–15% contingency.\n- All dollar figures and unit costs are model knowledge - verify; founder must confirm local device/pricing, salary scales, ethics fees and procurement timelines before applying.\n  - *Evidence:* Peer feedback (Funding Advisor) — requested funding scenarios, itemised use-of-funds and cost lines; M076 | Funding Advisor | funding (funding framing); M014 | Planner | plan (device & dev costs implied by deployment needs)\n  - *Contributed by:* Funding Advisor, Planner\n\n### Slide 10: Which funder type for which instrument\n- Foundation / public-health grant: proof-of-concept grant to cover pilot ops, M&E and ethics (short-term non-dilutive). Target ask: Scenario A or B depending on scope.\n- Accelerator / implementation partners: non-dilutive support + mentorship and procurement introductions; useful for procurement-readiness and district introductions (Scenario B).\n- District / Ministry procurement contract or innovation fund: scoped pilot procurement contract to embed the tool in routine workflows (Scenario C; aim to demonstrate procurement-readiness metrics required by buyer).\n- Seed investors / angels (dilutive): pursue only after pilot demonstrates measurable impact and procurement interest — use for product scaling, commercialisation and hiring (next-stage ask estimated separately).\n- Founder action: map each funder approach to a concrete ask and required deliverables (e.g., foundation grant to cover pilot ops & M&E for X months; accelerator cohort to cover implementation support & introductions).\n  - *Evidence:* M076 | Funding Advisor | funding (recommended funder types and narrative); M015 | Planner | plan (procurement and pilot-to-scale routes)\n  - *Contributed by:* Funding Advisor, Planner\n\n### Slide 11: Procurement-readiness metrics, buyer economics & partner commitments\n- Procurement-readiness metrics to demonstrate in pilot: per-facility and per-patient cost estimates (model knowledge - verify), clinician time-savings (minutes per encounter saved), escalation/referral accuracy targets, data completeness threshold (e.g., % of required fields captured), and safety (no increase in missed urgent cases).\n- Buyer economics to articulate: expected per-patient cost vs current pathway, operational savings from faster referral, supervisor time-savings from digital audit trails and reduction in unnecessary referrals.\n- Partner commitments: plan to secure MOUs/LOIs from pilot clinics and a district health office before applications; show signed LOIs in appendix. (Founder to obtain and insert MOUs/LOIs).\n  - *Evidence:* Peer feedback (Funding Advisor) — requested procurement-readiness metrics and MOUs/LOIs; M015 | Planner | plan (buyer economics & procurement pathways)\n  - *Contributed by:* Funding Advisor, Planner\n\n### Slide 12: Team, next-stage funding triggers & verification note\n- Team asks: clinical lead, product/tech lead, field ops/pilot lead, data security officer — list current bios and key hires required for pilot.\n- Next-stage funding: after a successful pilot (meeting primary endpoint and procurement interest), consider seed/angel raise to scale product dev, expand to more districts and recruit commercial/business development staff. Estimated next-stage ask and runway should be prepared after pilot; figures here would be model knowledge - verify.\n- Important: always verify funder eligibility, award sizes and deadlines with funders themselves before applying — funding programs change often.\n  - *Evidence:* M075 | Funding Advisor | funding (recommended stage: pre-seed → pilot); Peer feedback (Funding Advisor) — requested next-stage funding paragraph and verification note; M013 | Planner | plan (ethics & regulatory preparedness)\n  - *Contributed by:* Funding Advisor, Planner\n\n## Funding options to explore (verify before applying)\n\n- **Foundations & Grand Challenge-style pilot grants (e.g., global health foundation proof-of-concept funds)** (Non-dilutive grant (foundation / challenge prize), Pre-seed → early pilot (prototype → small implementation)): Foundations commonly fund proof-of-concept and short operational pilots that de-risk clinical AI in low-resource primary care. Typical awards are pilot/proof-of-concept grants (6–18 months funding) or implementation grants that cover staff, local partnerships, and evaluation costs. Eligibility usually requires a clear health impact hypothesis, local partnerships (clinic/district/NGO), and an evaluation plan. Submission timelines vary by foundation but expect periodic calls (2–4 month application windows) and 3–6 month review cycles. *Source: model knowledge - verify. Foundations and challenge funds differ greatly by program; confirm each program's eligibility criteria, award sizes, budgets allowed for evaluation, and application deadlines on the funder's site before applying.*\n- **District / ministry pilot procurement (local government pilot funding or digital health innovation units)** (Public procurement / pilot (government-run pilot funding), Pre-seed → Pilot → Implementation (proof-to-procurement pipeline)): Local health ministries or district health offices often run pilot procurement streams or innovation units that fund short pilots to test digital tools in a set of clinics. Typical awards are pilot contracts (3–12 month pilots) with in-kind commitments (clinic access, staff time) and sometimes small implementation budgets. Eligibility typically requires an MoU with the district/clinic leadership, alignment with national primary-care priorities, and data governance safeguards. RFPs and pilot calls align with budget cycles and can have long lead times (3–9+ months). *Source: model knowledge - verify. Procurement timelines and contracting requirements vary widely by country and district. Confirm procurement rules, pilot acceptance criteria and whether procurement includes purchase orders or just evaluation support.*\n- **NGO and implementing-partner pilots (donor-funded program partnerships)** (Non-dilutive partnership + sub-award (NGO implementations), Pre-seed → Pilot → Scale via implementer networks): Large NGOs and implementers running donor-funded primary-care or CHW programs can run pilots or include tech partners as sub-grantees. Typical award types are subcontracts/sub-awards attached to existing donor programs (6–24 month pilots) and can lead to multi-district roll-outs if results are strong. Eligibility normally requires an operational partner with a history of implementing donor-funded programs and demonstrated capacity to manage human-subjects research if clinical validation is planned. *Source: model knowledge - verify. NGOs often require local staffing, M&E plans, and alignment with donor deliverables. Confirm partner interest, sub-award terms and whether the NGO's donor allows technology procurement or requires open-source solutions.*\n- **Health innovation accelerators & intermediaries (accelerator cohorts, challenge-backed support)** (Accelerator / fellowship (hybrid: non-dilutive support + connections to procurement and investors), Pre-seed → Prototype → Pilot readiness): Accelerators focused on global health can provide small grants, mentorship, connections to pilot partners (ministries, NGOs), and investor introductions. Typical support: 3–6 month cohorts with seed grants, pilot introductions, and technical support. Eligibility is usually startup teams with a working prototype, clear pilot plan, and willingness to accept mentorship/cohort commitments. *Source: model knowledge - verify. Programs vary in what they offer (cash vs services) and in equity terms. Confirm whether support is non-dilutive, cohort dates, and pilot partnership facilitation specifics.*\n- **Pre-seed angels, impact investors and early-stage healthtech VCs (convertible note/SAFE or small equity round)** (Dilutive funding (angel syndicates / seed VC), Pre-seed → Seed (to convert successful pilots into product development and regulatory readiness)): Investors with an interest in clinical AI or rural/LMIC health provide small pre-seed checks to cover expanded pilots, regulatory and validation work, and hiring. Common deal structures at pre-seed are convertible notes, SAFEs or small priced rounds. Investors expect milestones such as: working offline-capable prototype, pilot MoU or procurement agreement, preliminary clinical validation metrics, local partnerships, and a go-to-market pilot plan. Timelines to funding close vary but expect 2–4 months from first meetings to close for well-prepared teams. *Source: model knowledge - verify. Investor expectations and structure differ; confirm target investor thesis, typical check size, and expected milestones before outreach. Consider offering convertible instruments for speed and minimal dilution at pre-seed.*\n\n## Gaps the founder should fill\n\n- Local unit costs: exact device unit prices (tablets/phones/pulse oximeters) in target country(s) — needed to finalise budget.\n- Local salary scales and per-diem/travel rates for field staff and trainers to finalise personnel lines.\n- Baseline epidemiological metrics: current missed urgent-case rate, baseline referral rate and average clinic volumes to power sample size and set endpoint targets.\n- Site-level commitments: signed MOUs/LOIs from 2–6 pilot clinics and a district health office to attach to funding applications.\n- Country-specific ethics/regulatory submission fees and timelines to estimate lead time and costs.\n- Precise next-stage funding target and runway needs post-pilot (founder inputs required).\n- Any existing prototype metrics (usability, preliminary accuracy) and team bios to populate the Team/Ask slide.\n\n## Open research questions\n\n- Exact Ministry of Health procurement pilots, tender timelines and donor solicitations in chosen pilot districts — must be mapped locally.\n- Device ownership and charging/infrastructure statistics for target facilities (percent of clinics with smartphones/tablets, charging availability).\n- Local regulatory requirements and ethics review timelines for clinical AI in each proposed country.\n- Data-sharing agreements, patient-consent norms, and legal constraints for reusing clinical data for model development in each country.\n- Potential local implementation partners (NGOs, digital health implementers) and their capacity to support training and supervision.\n\n## Final peer review\n\n- Research Agent: not approved (3/5)\n- Funding Advisor: not approved (2/5)"
+}
