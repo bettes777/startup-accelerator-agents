@@ -14,7 +14,7 @@ the outputs of a complete demo run (domain: *healthtech*); see [Results of the d
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env        # add the course lab's Azure OpenAI endpoint, key, API version, deployment
+cp .env.example .env        # add the Azure OpenAI endpoint, key, API version, deployment
 jupyter notebook Startup_Accelerator_Agents.ipynb
 ```
 
@@ -27,7 +27,7 @@ jupyter notebook Startup_Accelerator_Agents.ipynb
 > `AZURE_CHAT_DEPLOYMENT` (defaults to `gpt-5-mini`).
 
 Set `DOMAIN` and, optionally, `FOUNDER_CONTEXT` in section 8, then run all cells. Because of the
-course gateway's token limit, calls are spaced out and a run takes roughly 15–25 minutes. Each run
+gateway's token limit, calls are spaced out and a run takes roughly 15–25 minutes. Each run
 writes a folder under `runs/<timestamp>_<domain>/` containing:
 
 | File | What it is |
@@ -70,7 +70,7 @@ LangSmith tracing alongside the local logs.
 | Component | Implementation |
 |---|---|
 | Orchestration | LangGraph `StateGraph` with six nodes and two conditional edges (the feedback loops) |
-| LLM | Azure OpenAI through `langchain_openai.AzureChatOpenAI` (course lab gateway, default deployment `gpt-5-mini`) |
+| LLM | Azure OpenAI through `langchain_openai.AzureChatOpenAI` (gateway, default deployment `gpt-5-mini`) |
 | Agent outputs | Pydantic schemas via `with_structured_output`, so hand-offs are typed, not free text |
 | Shared memory | `VectorMemory`: NumPy cosine-similarity store; Azure embeddings if configured, otherwise a local hashing embedding |
 | Tools | Optional Tavily web search (REST) for the Research Agent and Funding Advisor, cached per run |
@@ -126,7 +126,7 @@ When an agent rewrites its output after feedback, its earlier memory items are m
 ## Results of the demo run
 
 Domain *healthtech*, founder context: *pre-seed team building an AI triage assistant for rural
-primary-care clinics*. Azure OpenAI `gpt-5-mini` through the course gateway; web search and Azure
+primary-care clinics*. Azure OpenAI `gpt-5-mini` through the gateway; web search and Azure
 embeddings were off, so the agents worked from model knowledge and the local hashing embeddings.
 
 | Measure | Result |
@@ -207,7 +207,7 @@ The brief allows CrewAI, LangGraph or AutoGen.
 
 ## Notes and limitations
 
-- Tested on the course's Ubuntu lab VM in VS Code, using a Python virtual environment and the course
+- Tested on an Ubuntu lab VM in VS Code, using a Python virtual environment and
   Azure OpenAI gateway (`gpt-5-mini`).
 - The `reasoning` text in the trace is each agent's own short summary of its choices, not a record
   of the model's internal reasoning.
