@@ -17,15 +17,6 @@ pip install -r requirements.txt
 cp .env.example .env        # add the Azure OpenAI endpoint, key, API version, deployment
 jupyter notebook Startup_Accelerator_Agents.ipynb
 ```
-
-> **Note:** some browsers drop the leading dot from file names when downloading. If you see `env`,
-> `env.example` or `gitignore.txt`, rename them to `.env`, `.env.example` and `.gitignore`. The
-> notebook only reads a file named exactly `.env`, in the folder Jupyter is started from.
->
-> Accepted setting names: `AZURE_OPENAI_ENDPOINT` / `AZURE_API_BASE`, `AZURE_OPENAI_API_KEY` /
-> `AZURE_API_KEY`, `OPENAI_API_VERSION` / `AZURE_OPENAI_API_VERSION` / `AZURE_API_VERSION`, and
-> `AZURE_CHAT_DEPLOYMENT` (defaults to `gpt-5-mini`).
-
 Set `DOMAIN` and, optionally, `FOUNDER_CONTEXT` in section 8, then run all cells. The Azure OpenAI endpoint used for testing had strict rate limits, so the notebook spaces out its calls and a full run takes about 15–25 minutes. If your endpoint allows more traffic, you can shorten the pauses in section 6. Each run saves its outputs in a new folder runs/<timestamp>_<domain>/, containing:
 
 | File | What it is |
