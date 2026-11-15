@@ -147,7 +147,7 @@ accelerators, angels) rather than named programs, and every figure needs verific
 
 ## 4. Why LangGraph (framework choice)
 
-The brief allows CrewAI, LangGraph or AutoGen.
+This project allows CrewAI, LangGraph or AutoGen.
 
 - **The workflow is a fixed pipeline with two conditional loops.** LangGraph models this
   directly as a state graph with conditional edges, and the loop limits are explicit, testable
