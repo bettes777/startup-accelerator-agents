@@ -147,7 +147,7 @@ accelerators, angels) rather than named programs, and every figure needs verific
 
 ## 4. Why LangGraph (framework choice)
 
-This project allows CrewAI, LangGraph or AutoGen.
+CrewAI, LangGraph and AutoGen were the candidate frameworks.
 
 - **The workflow is a fixed pipeline with two conditional loops.** LangGraph models this
   directly as a state graph with conditional edges, and the loop limits are explicit, testable
@@ -171,9 +171,9 @@ This project allows CrewAI, LangGraph or AutoGen.
 | **Endless feedback loops** | Hard limits: one research follow-up, `max_review_rounds` peer reviews, plus LangGraph's `recursion_limit` | The outline may finalize with feedback still open; it is recorded in the trace and review scores |
 | **Context growth** when passing full transcripts between agents | Shared vector memory with top-k retrieval, filtered by author | Retrieval can miss a relevant item; I chose larger *k* for the Pitch Coach |
 | **Stale context after revisions** | Superseding earlier items of the same kind | Older reasoning is no longer retrievable by agents (still kept on disk) |
-| **No embedding deployment on the lab gateway** (possible) | Local hashing embedding fallback | Keyword-level similarity instead of semantic similarity |
+| **No embedding deployment on the gateway** (possible) | Local hashing embedding fallback | Keyword-level similarity instead of semantic similarity |
 | **"Reasoning paths" without exposing hidden chain-of-thought** | Each agent returns a short `reasoning` field, logged with its output | This is the model's own summary of its rationale, not a full record of its internal reasoning |
-| **Course gateway rate limit (HTTP 429)**: the first runs failed at peer review. Retries didn't help because one ~6,300-token request was larger than the gateway accepts at once | Shorter summaries in review prompts, a ~3,500-token cap per prompt, 20 s pacing between calls, and wait-and-retry on 429 | Runs are slower (15–25 min), and a capped prompt can lose context (see next row) |
+| **Gateway rate limit (HTTP 429)**: the first runs failed at peer review. Retries didn't help because one ~6,300-token request was larger than the gateway accepts at once | Shorter summaries in review prompts, a ~3,500-token cap per prompt, 20 s pacing between calls, and wait-and-retry on 429 | Runs are slower (15–25 min), and a capped prompt can lose context (see next row) |
 | **Prompt trimming drops the end of a prompt.** In the demo run the Pitch Coach's revision prompt (~4,200 tokens) was trimmed to fit. Peer feedback is placed first, so it survived, but the tail (probably part of the research and funding input and the closing instructions) was cut | Logged as a `prompt_trimmed` event so it is visible in the trace | A better fix is to shrink the retrieved memory for revisions rather than cut text; listed under extensions |
 | **Questions sent to the wrong agent.** The Funding Advisor asked the Research Agent which country the founder will pilot in and at what scale. Only the founder can answer this | The Research Agent answered with what it could and listed the rest as open questions | A "questions for the founder" channel (a human-in-the-loop step) would handle this properly |
 | **Cost and latency** | 11 LLM calls in the demo run; web results cached per run | More review rounds might improve quality but add calls, time and rate-limit pressure |
@@ -196,8 +196,15 @@ This project allows CrewAI, LangGraph or AutoGen.
 
 ## Notes and limitations
 
-- Tested on an Ubuntu lab VM in VS Code, using a Python virtual environment and
+- Tested on an Ubuntu VM in VS Code, using a Python virtual environment and
   Azure OpenAI gateway (`gpt-5-mini`).
+- The accuracy guardrails are prompt instructions, not code checks. In the demo run every figure in the
+  outline carried the "model knowledge - verify" label, but nothing in the code enforces that.
+- In the demo run the review scores fell after the revision (Research 4/5 to 3/5, Funding 3/5 to 2/5).
+  The cause is not confirmed. Two possible factors: the revision prompt was trimmed in that round, and
+  reviewers are not shown their own earlier feedback, so each round is reviewed from scratch.
+- Routing edge case: a reviewer who rejects the outline but lists no requested changes is treated as
+  having approved, because the router checks only whether any change requests exist.
 - The `reasoning` text in the trace is each agent's own short summary of its choices, not a record
   of the model's internal reasoning.
 - Package versions are not pinned. If an API has changed, check the current LangGraph and

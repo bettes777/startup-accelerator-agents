@@ -1,0 +1,26 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	planner(planner)
+	research(research)
+	funding(funding)
+	pitch_coach(pitch_coach)
+	peer_review(peer_review)
+	finalize(finalize)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> planner;
+	funding -.-> pitch_coach;
+	funding -.-> research;
+	peer_review -.-> finalize;
+	peer_review -.-> pitch_coach;
+	pitch_coach --> peer_review;
+	planner --> research;
+	research --> funding;
+	finalize --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
